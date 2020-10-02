@@ -15,12 +15,19 @@ public class Main {
             System.out.println();
             option = input.next();
             if (option.equals("1")) {
-                //ingresar();
+                ingresar();
             } else if (option.equals("2")) {
-                // registrarse();
+                registrarse();
             } if(option.equals("0")){
                 break;
             }
         }
+    }public static void ingresar(){
+        System.out.println("Ingrese el documento o correo");
+        String docuCorr = input.next();
+        System.out.println("Ingrese su contraseña");
+        String contraseña = input.next();
+    }public static void registrarse(){
+        
     }
 }
