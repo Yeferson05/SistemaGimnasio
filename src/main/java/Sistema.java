@@ -32,13 +32,7 @@ public class Sistema {
     public static void ingresar() {
         System.out.println("ingrese su documento o correo,lo que desee ");
         String ingreso= input.next();
-        int conteo = 0;
-        for(int i=0;i<ingreso.length();i++){
-            if(ingreso.charAt(i)=='@'){
-                conteo+=2;
-            }
-        }
-        if(conteo<1){
+        if(!(ingreso.contains("@"))){
             int docingreso=Integer.parseInt(ingreso);
             for (Usuario usuario : usuarios) {
                 if (usuario.documento == docingreso) {
