@@ -49,6 +49,7 @@ public class Sistema {
                     String Contraseña=input.next();
                     if(usuario.password.equals(Contraseña)){
                         System.out.println("---¡Ingreso exitoso!---");
+                        menuPrincipal();
                     }else{
                         System.out.println("--Contraseña incorrecta---");
                         return;
@@ -65,6 +66,7 @@ public class Sistema {
                     String Contraseña=input.next();
                     if(usuario.password.equals(Contraseña)){
                         System.out.println("---¡Ingreso exitoso!---");
+                        menuPrincipal();
                     }else{
                         System.out.println("---Contraseña incorrecta---");
                         return;
@@ -104,6 +106,7 @@ public class Sistema {
         }
         if (!(correo.contains("@"))){
             System.out.println("---El correo ingresado es invalido.---");
+            return;
         }
         System.out.println("-   Ingrese la contraseña:");
         String contra=input.next();
@@ -120,15 +123,15 @@ public class Sistema {
         String option;
         while(true){
             System.out.println();
-            System.out.println("-----------------------------");
+            System.out.println("-------       Menú principal       -------");
             System.out.println("Hola "+saludo);
-            System.out.println("escoja una opcion");
-            System.out.println("1. Administracion");
+            System.out.println("Escoja una opcion");
+            System.out.println("1. Administración");
             System.out.println("2. Busqueda ");
             System.out.println("3. Diagnostico de inconsistencias");
             System.out.println("4. Guardar ");
-            System.out.println("5. Salir ");
-            System.out.println("-----------------------------");
+            System.out.println("5. Salir y cancelar ");
+            System.out.println("-------------------------------------------");
             System.out.println();
             option=input.next();
             if(option.equals("1")){

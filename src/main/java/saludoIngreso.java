@@ -2,7 +2,7 @@ public class saludoIngreso {
     public String nombre;
     public String apellido;
 
-    public saludoIngreso( String nombre,String apelli) {
+    public saludoIngreso( String nombre,String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
