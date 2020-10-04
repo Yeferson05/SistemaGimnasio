@@ -38,38 +38,80 @@ public class Sistema {
         }
     }
     public static void ingresar() {
-        System.out.println("ingrese su documento o correo,lo que desee ");
+        System.out.println("-                   Iniciar sesión                   -");
+        System.out.println("-   Ingrese su numero de documento/correo electronico:");
         String ingreso= input.next();
         if(!(ingreso.contains("@"))){
             int docingreso=Integer.parseInt(ingreso);
             for (Usuario usuario : usuarios) {
                 if (usuario.cedula == docingreso) {
-                    System.out.println("ingrese la contraseña");
+                    System.out.println("-   Ingrese la contraseña:");
                     String Contraseña=input.next();
                     if(usuario.password.equals(Contraseña)){
-                        System.out.println("ingreso exitoso");
+                        System.out.println("---¡Ingreso exitoso!---");
                     }else{
-                        System.out.println("contraseña incorrecta");
+                        System.out.println("--Contraseña incorrecta---");
+                        return;
                     }
                 }else{
-                    System.out.println("documento incorrecto");
+                    System.out.println("---Este documento no se encuentra en la base de datos---");
+                    return;
                 }
             }
         }else{
             for (Usuario usuario : usuarios) {
                 if (usuario.correo.equals(ingreso)) {
-                    System.out.println("ingrese la contraseña");
+                    System.out.println("-   Ingrese la contraseña: ");
                     String Contraseña=input.next();
                     if(usuario.password.equals(Contraseña)){
-                        System.out.println("ingreso exitoso");
+                        System.out.println("---¡Ingreso exitoso!---");
                     }else{
-                        System.out.println("contraseña incorrecta");
+                        System.out.println("---Contraseña incorrecta---");
+                        return;
                     }
                 }else{
-                    System.out.println("correo incorrecto");
+                    System.out.println("---Este correo no se encuentra en la base de datos.---");
+                    return;
                 }
             }
         }
+    }
+    public static void registrarse() {
+        System.out.println("-                   Registro                        -");
+        System.out.println("-   Ingrese su documento de identidad: ");
+        int documento = input.nextInt();
+        if (documento < 0) {
+            System.out.println("---El documento ingresado es invalido.---");
+            return;
+        }
+        for (Usuario usuario : usuarios) {
+            if (usuario.cedula == documento) {
+                System.out.println("---El usuario ingresado ya existe.---");
+                return;
+            }
+        }
+        System.out.println("-   Ingrese su nombre: ");
+        String nombre=input.next();
+        System.out.println("-   Ingrese su apellido: ");
+        String apellido=input.next();
+        System.out.println("-   Ingrese su dirección de correo electronico completo.");
+        String correo=input.next();
+        for (Usuario usuario : usuarios) {
+            if (usuario.correo.equals(correo)) {
+                System.out.println("---El correo electronico ingresado ya existe.---");
+                return;
+            }
+        }
+        if (!(correo.contains("@"))){
+            System.out.println("---El correo ingresado es invalido.---");
+        }
+        System.out.println("-   Ingrese la contraseña:");
+        String contra=input.next();
+        input.nextLine();
+        Usuario nuevoUsuario = new Usuario(documento,nombre,apellido,correo,contra);
+        usuarios.add(nuevoUsuario);
+        System.out.println("---¡Registro exitoso!---");
+        ingresar();
     }
 
 
@@ -559,48 +601,7 @@ public class Sistema {
 
 
 
-    public static void registrarse() {
-        System.out.println("ingrese el documento de identidad");
-        int documento = input.nextInt();
-        if (documento < 0) {
-            System.out.println("ingresaste un documento invalidad");
-            return;
-        }
-        for (Usuario usuario : usuarios) {
-            if (usuario.cedula == documento) {
-                System.out.println("el usuario ya existe");
-                return;
-            }
-        }
-        System.out.println("ingrese el nombre ");
-        String nombre=input.next();
-        System.out.println("ingrese el apellido ");
-        String apellido=input.next();
-        System.out.println("ingrese el correo");
-        String correoo=input.next();
-        int conteo=0;
-        for (Usuario usuario : usuarios) {
-            if (usuario.correo.equals(correoo)) {
-                System.out.println("el correo ya existe");
-                return;
-            }
-        }
-        for(int i=0;i<correoo.length();i++){
-            if(correoo.charAt(i)=='@'){
-                conteo+=1;
-            }
-        }
-        if(conteo<1){
-            System.out.println("ingresaste un correo invalido");
-            return;
-        }
-        System.out.println("ingrese la contraseña");
-        String contra=input.next();
-        input.nextLine();
-        Usuario nuevoUsuario = new Usuario(documento,nombre,apellido,correoo,contra);
-        usuarios.add(nuevoUsuario);
-        System.out.println("el usuario se registró correctamente");
-    }
+
 
     public static void visualizar() {
         for (Usuario usuario : usuarios) {
