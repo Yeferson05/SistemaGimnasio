@@ -23,4 +23,14 @@ public class Usuario {
                 "\t contra : " + password + "\n" +
                 "\t ";
     }
+    public int getCedula(){
+        return cedula;
+    }
+    public String getCorreo(){
+        return correo;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

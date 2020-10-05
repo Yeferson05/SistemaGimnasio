@@ -50,11 +50,14 @@ public class Sistema {
         }
         if(res == true){
             int docingreso=Integer.parseInt(ingreso);
-            for (Usuario usuario : usuarios) {
-                if (usuario.cedula == docingreso) {
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (usuarios.get(i).cedula == docingreso) {
+                    saludo.clear();
+                    saludoIngreso ingreso1 = new saludoIngreso(usuarios.get(i).nombre, usuarios.get(i).apellido);
+                    saludo.add(ingreso1);
                     System.out.println("-   Ingrese la contraseña:");
                     String Contraseña=input.next();
-                    if(usuario.password.equals(Contraseña)){
+                    if(usuarios.get(i).password.equals(Contraseña)){
                         System.out.println("---¡Ingreso exitoso!---");
                         menuPrincipal();
                     }else{
@@ -67,11 +70,11 @@ public class Sistema {
                 }
             }
         }else if (res == false && ingreso.contains("@") == true){
-            for (Usuario usuario : usuarios) {
-                if (usuario.correo.equals(ingreso)) {
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (usuarios.get(i).correo.equals(ingreso)) {
                     System.out.println("-   Ingrese la contraseña: ");
                     String Contraseña=input.next();
-                    if(usuario.password.equals(Contraseña)){
+                    if(usuarios.get(i).password.equals(Contraseña)){
                         System.out.println("---¡Ingreso exitoso!---");
                         menuPrincipal();
                     }else{
@@ -122,7 +125,6 @@ public class Sistema {
         Usuario nuevoUsuario = new Usuario(documento,nombre,apellido,correo,contra);
         usuarios.add(nuevoUsuario);
         System.out.println("---¡Registro exitoso!---");
-        ingresar();
     }
 
 
