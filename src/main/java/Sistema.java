@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -510,7 +511,7 @@ public class Sistema {
 
     public static void busqueda() {
         String option;
-        while(true) {
+        while (true) {
             System.out.println();
             System.out.println("-----------------------------");
             System.out.println("Ingrese la opcion que desee buscar");
@@ -525,13 +526,13 @@ public class Sistema {
             System.out.println("-----------------------------");
             System.out.println();
             option = input.next();
-            if(option.equals("1")) {
+            if (option.equals("1")) {
                 if (gimnasios.size() == 0) {
                     System.out.println("la lista de gimnasios se encuentra vacía");
                     return;
                 }
                 String seleccion;
-                while(true) {
+                while (true) {
                     System.out.println();
                     System.out.println("-----------------------------");
                     System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
@@ -540,64 +541,371 @@ public class Sistema {
                     System.out.println("3. Siglas");
                     System.out.println("4. Direccion");
                     System.out.println("5. Telefono");
-                    System.out.println("6. Cancelar");
+                    System.out.println("6. volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el numero del nit");
+                                int valorExacto = input.nextInt();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.nit == valorExacto) {
+                                        System.out.println(gimnasio.nit);
+                                        c++;
+                                    }
+
+                                }if (c==0){
+                                    System.out.println("El NIT a buscar no se encuentra");
+                                }
+                            } else if (option1.equals("2")) {
+                                System.out.println("Ingrese un valor de nit");
+                                int valorMinimo = input.nextInt();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.nit >= valorMinimo) {
+                                        System.out.println(gimnasio.nit);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("No hay nit que mostrar");
+                                }
+                            } else if (option1.equals("3")) {
+                                System.out.println("Ingrese un valor de nit");
+                                int valorMaximo = input.nextInt();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.nit <= valorMaximo) {
+                                        System.out.println(gimnasio.nit);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("No hay nit que mostrar");
+                                }
+                            } else if (option1.equals("4")) {
+                                break;
+                            }
+                        }
+                    } else if (option.equals("2")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")){
+                                System.out.println("Ingrese el nombre del Gym");
+                                String nombre = input.nextLine();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.nombre == nombre) {
+                                        System.out.println(gimnasio.nombre);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("El nombre a buscar no fue encontrado");
+                                }
+                            }else if (option2.equals("2")){
+                                System.out.println("Ingrese el nombre del Gym");
+                                String nombre = input.nextLine();
+                                String nombreMinu=nombre.toLowerCase();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.nombre.toLowerCase() == nombreMinu) {
+                                        System.out.println(gimnasio.nombre);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("El nombre a buscar no fue encontrado");
+                                }
+                            }
+                        }
+                    } else if (option.equals("3")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese las siglas del Gym");
+                                String sigla = input.next();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.siglas == sigla) {
+                                        System.out.println(gimnasio.siglas);
+                                        c++;
+                                    }
+                                }if (c == 0) {
+                                    System.out.println("Las siglas a buscar no se encunetra");
+                                }
+                            }else if (option2.equals("2")){
+                                System.out.println("Ingrese las siglas del Gym");
+                                String nombre = input.nextLine();
+                                String nombreMinu=nombre.toLowerCase();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.siglas.toLowerCase() == nombreMinu) {
+                                        System.out.println(gimnasio.siglas);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("Las siglas a buscar no se encunetra");
+                                }
+                            }
+                        }
+                    }else if (option.equals("4")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese la direccion Gym");
+                                String direccion = input.next();
+                                int c = 0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.direccion == direccion) {
+                                        System.out.println(gimnasio.direccion);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La direccion a buscar no se encunetra");
+                                }
+                            }else if (option2.equals("2")) {
+                                System.out.println("Ingrese la direccion del Gym");
+                                String direccion = input.nextLine();
+                                String direccionMinu = direccion.toLowerCase();
+                                int c = 0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.direccion.toLowerCase() == direccionMinu) {
+                                        System.out.println(gimnasio.direccion);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La direccion a buscar no se encuentra");
+                                }
+                            }
+                        }
+                    }else if (option.equals("5")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese el numero de telefono a buscar");
+                                int numeroTelefono = input.nextInt();
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.telefono == numeroTelefono) {
+                                        System.out.println(gimnasio.telefono);
+                                    } else {
+                                        System.out.println("El telefono a buscar no se encunetra");
+                                    }
+
+                                }
+                            } else if (option2.equals("2")) {
+                                System.out.println("Ingrese el numero de telefono a buscar");
+                                int numero = input.nextInt();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.telefono >= numero) {
+                                        System.out.println(gimnasio.telefono);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("No hay telefonos que mostrar");
+                                }
+                            } else if (option2.equals("3")) {
+                                System.out.println("Ingrese el numero de telefono a buscar");
+                                int numero = input.nextInt();
+                                int c=0;
+                                for (Gimnasios gimnasio : gimnasios) {
+                                    if (gimnasio.telefono <= numero) {
+                                        System.out.println(gimnasio.telefono);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("No hay telefonos que mostrar");
+                                }
+                            } else if (option2.equals("4")) {
+                                break;
+                            }
+                        }
+                    } else if (option.equals("6")) {
+                        break;
+                    }
+                }
+            } else if (option.equals("2")) {
+                if (sedes.size() == 0) {
+                    System.out.println("la lista de las sedes se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Nombre");
+                    System.out.println("2. Direccion");
+                    System.out.println("3. Ciudad");
+                    System.out.println("4. volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
                     if (seleccion.equals("1")){
-                        System.out.println("Ingrese el NIT del Gym");
-                        int nit = input.nextInt();
-                        for (Gimnasios gimnasio : gimnasios) {
-                            if (gimnasio.nit== nit){
-                                System.out.println(gimnasio.nit);
-                            }else{
-                                System.out.println("El NIT a buscar no se encuentra");
-                            }
-
-                        }
-                    }else if (seleccion.equals("2")){
-                        System.out.println("Ingrese el nombre del Gym");
-                        String nombre = input.nextLine();
-                        for (Gimnasios gimnasio : gimnasios) {
-                            if (gimnasio.nombre.equals(nombre)){
-                                System.out.println(gimnasio.nombre);
-                            }else{
-                                System.out.println("El nombre a buscar no se encuentra");
-                            }
-
-                        }
-                    }else if (seleccion.equals("3")){
-                        System.out.println("Ingrese las siglas del Gym");
-                        String sigla = input.next();
-                        for (Gimnasios gimnasio : gimnasios) {
-                            if (gimnasio.siglas.equals(sigla)){
-                                System.out.println(gimnasio.siglas);
-                            }else{
-                                System.out.println("Las siglas a buscar no se encuentra");
-                            }
-                        }
-                    }else if (seleccion.equals("4")){
-                        System.out.println("Ingrese la direccion del Gym");
-                        String direccion = input.next();
-                        for (Gimnasios gimnasio : gimnasios) {
-                            if (gimnasio.direccion.equals(direccion)){
-                                System.out.println(gimnasio.direccion);
-                            }else{
-                                System.out.println("La direccion a buscar no se encuentra");
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la sede a buscar");
+                                String sede = input.nextLine();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.nombre == sede) {
+                                        System.out.println(sede1.nombre);
+                                        c++;
+                                    }
+                                }if (c==0) {
+                                    System.out.println("No se encontro el nombre de la sede");
+                                }
+                            } else if (option1.equals("2")) {
+                                System.out.println("Ingrese el nombre de la sede a buscar");
+                                String nombre = input.nextLine();
+                                String nombreMInus= nombre.toLowerCase();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.nombre.toLowerCase() == nombreMInus) {
+                                        System.out.println(sede1.nombre);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("No se encontro el nombre de la sede");
+                                }
+                            }else if (option1.equals("3")) {
+                                break;
                             }
                         }
-                    }else if (seleccion.equals("5")){
-                        System.out.println("Ingrese el telefono del Gym");
-                        int telefono = input.nextInt();
-                        for (Gimnasios gimnasio : gimnasios) {
-                            if (gimnasio.telefono == telefono){
-                                System.out.println(gimnasio.telefono);
-                            }else{
-                                System.out.println("El telefono a buscar no se encuentra");
+                    }if (seleccion.equals("2")){
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese la direccion de la sede a buscar");
+                                String dire = input.nextLine();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.direccion == dire) {
+                                        System.out.println(sede1.direccion);
+                                        c++;
+                                    }
+                                }if (c==0) {
+                                    System.out.println("No se encontro la direccion de la sede");
+                                }
+                            } else if (option1.equals("2")) {
+                                System.out.println("Ingrese la direccion de la sede a buscar");
+                                String direccion = input.nextLine();
+                                String direccionMInus= direccion.toLowerCase();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.direccion.toLowerCase() == direccionMInus) {
+                                        System.out.println(sede1.direccion);
+                                        c++;
+                                    }
+                                }if (c==0) {
+                                    System.out.println("No se encontro la direccion de la sede");
+                                }
+                            }else if (option1.equals("3")) {
+                                break;
                             }
                         }
-                    }else if(seleccion.equals("6")){
-                        break;
+                    }if (seleccion.equals("3")){
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese la ciudad de la sede a buscar");
+                                String ciudad = input.nextLine();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.ciudad == ciudad) {
+                                        System.out.println(sede1.ciudad);
+                                        c++;
+                                    }
+                                }if (c==0) {
+                                    System.out.println("No se encontro la ciudad de la sede");
+                                }
+                            } else if (option1.equals("2")) {
+                                System.out.println("Ingrese la ciudad de la sede a buscar");
+                                String ciudad = input.nextLine();
+                                String ciudadMInus= ciudad.toLowerCase();
+                                int c=0;
+                                for (Sede sede1 : sedes) {
+                                    if (sede1.ciudad.toLowerCase() == ciudadMInus) {
+                                        System.out.println(sede1.ciudad);
+                                        c++;
+                                    }
+                                }if (c==0) {
+                                    System.out.println("No se encontro la ciudad de la sede");
+                                }
+                            }else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
                     }
                 }
             }
