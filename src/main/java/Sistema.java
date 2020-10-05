@@ -11,6 +11,7 @@ public class Sistema {
     public static ArrayList<Rutinas> rutinas= new ArrayList<>();
     public static ArrayList<saludoIngreso> saludo= new ArrayList<>();
     public static ArrayList<Entrenadores> entrenadores= new ArrayList<>();
+    public static ArrayList<Cursos> cursos= new ArrayList<>();
     public static void main(String[] args) {
         Gimnasios nuevoGym1=new Gimnasios(123,"bodytech","bdt","avenida siempre viva",321);
         gimnasios.add(nuevoGym1);
