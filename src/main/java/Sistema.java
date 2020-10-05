@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -427,6 +426,15 @@ public class Sistema {
             System.out.println();
             option=input.next();
             if(option.equals("1")){
+                if(entrenadores.size() == 0){
+                    System.out.println("la lista de entrenadores se encuentra vacía");
+                    return;
+                }
+                System.out.println("lista de entrenadores");
+                for (Entrenadores entrenador : entrenadores) {
+                    System.out.println(entrenador);
+                }
+            }else if(option.equals("2")){
                 System.out.println("ingrese el documento de identidad");
                 int documento = input.nextInt();
                 if (documento < 0) {
