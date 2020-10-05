@@ -51,8 +51,10 @@ public class Sistema {
         }
         if(res == true){
             int docingreso=Integer.parseInt(ingreso);
+            boolean documentoExiste = false;
             for (int i = 0; i < usuarios.size(); i++) {
                 if (usuarios.get(i).cedula == docingreso) {
+                    documentoExiste=true;
                     saludo.clear();
                     saludoIngreso ingreso1 = new saludoIngreso(usuarios.get(i).nombre, usuarios.get(i).apellido);
                     saludo.add(ingreso1);
@@ -61,15 +63,14 @@ public class Sistema {
                     if(usuarios.get(i).password.equals(Contraseña)){
                         System.out.println("---¡Ingreso exitoso!---");
                         menuPrincipal();
+                        return;
                     }else{
                         System.out.println("--Contraseña incorrecta---");
                         return;
                     }
-                }else{
-                    System.out.println("---Este documento no se encuentra en la base de datos---");
-                    return;
                 }
             }
+            System.out.println("---Este documento no se encuentra en la base de datos---");
         }else if (res == false && ingreso.contains("@") == true){
             for (int i = 0; i < usuarios.size(); i++) {
                 if (usuarios.get(i).correo.equals(ingreso)) {
@@ -531,7 +532,7 @@ public class Sistema {
             System.out.println("5. Usuarios");
             System.out.println("6. Entrenadores");
             System.out.println("7. Rutinas");
-            System.out.println("5. Volver");
+            System.out.println("8. Volver");
             System.out.println("-----------------------------");
             System.out.println();
             option = input.next();
