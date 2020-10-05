@@ -51,10 +51,8 @@ public class Sistema {
         }
         if(res == true){
             int docingreso=Integer.parseInt(ingreso);
-            boolean documentoExiste = false;
             for (int i = 0; i < usuarios.size(); i++) {
                 if (usuarios.get(i).cedula == docingreso) {
-                    documentoExiste=true;
                     saludo.clear();
                     saludoIngreso ingreso1 = new saludoIngreso(usuarios.get(i).nombre, usuarios.get(i).apellido);
                     saludo.add(ingreso1);
@@ -73,6 +71,9 @@ public class Sistema {
             System.out.println("---Este documento no se encuentra en la base de datos---");
         }else if (res == false && ingreso.contains("@") == true){
             for (int i = 0; i < usuarios.size(); i++) {
+                saludo.clear();
+                saludoIngreso ingreso1 = new saludoIngreso(usuarios.get(i).nombre, usuarios.get(i).apellido);
+                saludo.add(ingreso1);
                 if (usuarios.get(i).correo.equals(ingreso)) {
                     System.out.println("-   Ingrese la contraseña: ");
                     String Contraseña=input.next();
@@ -83,11 +84,12 @@ public class Sistema {
                         System.out.println("---Contraseña incorrecta---");
                         return;
                     }
-                }else{
-                    System.out.println("---Este correo no se encuentra en la base de datos.---");
-                    return;
                 }
             }
+            System.out.println("---Este correo no se encuentra en la base de datos.---");
+
+        }else{
+            System.out.println ("---Ingresaste valores invalidos.---");
         }
     }
 
@@ -127,6 +129,7 @@ public class Sistema {
         Usuario nuevoUsuario = new Usuario(documento,nombre,apellido,correo,contra);
         usuarios.add(nuevoUsuario);
         System.out.println("---¡Registro exitoso!---");
+        ingresar();
     }
 
 
