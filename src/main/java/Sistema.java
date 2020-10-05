@@ -41,7 +41,14 @@ public class Sistema {
         System.out.println("-                   Iniciar sesión                   -");
         System.out.println("-   Ingrese su numero de documento/correo electronico:");
         String ingreso= input.next();
-        if(!(ingreso.contains("@"))){
+        boolean res=true;
+        try {
+            Integer.parseInt(ingreso);
+            res = true;
+        } catch (NumberFormatException excepcion) {
+            res = false;
+        }
+        if(res == true){
             int docingreso=Integer.parseInt(ingreso);
             for (Usuario usuario : usuarios) {
                 if (usuario.cedula == docingreso) {
@@ -59,7 +66,7 @@ public class Sistema {
                     return;
                 }
             }
-        }else{
+        }else if (res == false && ingreso.contains("@") == true){
             for (Usuario usuario : usuarios) {
                 if (usuario.correo.equals(ingreso)) {
                     System.out.println("-   Ingrese la contraseña: ");
@@ -78,6 +85,7 @@ public class Sistema {
             }
         }
     }
+
     public static void registrarse() {
         System.out.println("-                   Registro                        -");
         System.out.println("-   Ingrese su documento de identidad: ");
@@ -125,7 +133,7 @@ public class Sistema {
             System.out.println();
             System.out.println("-------       Menú principal       -------");
             System.out.println("Hola "+saludo);
-            System.out.println("Escoja una opcion");
+            System.out.println("Escoja una opción");
             System.out.println("1. Administración");
             System.out.println("2. Busqueda ");
             System.out.println("3. Diagnostico de inconsistencias");
@@ -168,7 +176,7 @@ public class Sistema {
         String option;
         while(true){
             System.out.println();
-            System.out.println("-----------------------------");
+            System.out.println("-------       Administración       -------");
             System.out.println("escoja una opcion");
             System.out.println("1. Gimnasios");
             System.out.println("2. Sedes ");
@@ -177,7 +185,7 @@ public class Sistema {
             System.out.println("5. Entrenadores ");
             System.out.println("6. Usuarios ");
             System.out.println("7. Cancelar ");
-            System.out.println("-----------------------------");
+            System.out.println("------------------------------------------");
             System.out.println();
             option=input.next();
             if(option.equals("1")){
@@ -611,4 +619,5 @@ public class Sistema {
             System.out.println(usuario);
         }
     }
+
 }
