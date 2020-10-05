@@ -569,45 +569,48 @@ public class Sistema {
                             if (option1.equals("1")) {
                                 System.out.println("Ingrese el numero del nit");
                                 int valorExacto = input.nextInt();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nit == valorExacto) {
-                                        System.out.println(gimnasio.nit);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
 
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("El NIT a buscar no se encuentra");
                                 }
                             } else if (option1.equals("2")) {
                                 System.out.println("Ingrese un valor de nit");
                                 int valorMinimo = input.nextInt();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nit >= valorMinimo) {
-                                        System.out.println(gimnasio.nit);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("No hay nit que mostrar");
                                 }
                             } else if (option1.equals("3")) {
                                 System.out.println("Ingrese un valor de nit");
                                 int valorMaximo = input.nextInt();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nit <= valorMaximo) {
-                                        System.out.println(gimnasio.nit);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("No hay nit que mostrar");
                                 }
                             } else if (option1.equals("4")) {
                                 break;
                             }
                         }
-                    } else if (option.equals("2")) {
+                    } else if (seleccion.equals("2")) {
                         String option2;
                         while (true) {
                             System.out.println();
@@ -618,34 +621,38 @@ public class Sistema {
                             System.out.println("3. Volver");
                             System.out.println();
                             option2 = input.next();
-                            if (option2.equals("1")){
+                            if (option2.equals("1")) {
                                 System.out.println("Ingrese el nombre del Gym");
                                 String nombre = input.nextLine();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nombre == nombre) {
-                                        System.out.println(gimnasio.nombre);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("El nombre a buscar no fue encontrado");
                                 }
-                            }else if (option2.equals("2")){
+                            } else if (option2.equals("2")) {
                                 System.out.println("Ingrese el nombre del Gym");
                                 String nombre = input.nextLine();
-                                String nombreMinu=nombre.toLowerCase();
-                                int c=0;
+                                String nombreMinu = nombre.toLowerCase();
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nombre.toLowerCase() == nombreMinu) {
-                                        System.out.println(gimnasio.nombre);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("El nombre a buscar no fue encontrado");
                                 }
+                            }else if (option2.equals("3")) {
+                                break;
                             }
                         }
-                    } else if (option.equals("3")) {
+                    } else if (seleccion.equals("3")) {
                         String option2;
                         while (true) {
                             System.out.println();
@@ -659,31 +666,35 @@ public class Sistema {
                             if (option2.equals("1")) {
                                 System.out.println("Ingrese las siglas del Gym");
                                 String sigla = input.next();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.siglas == sigla) {
-                                        System.out.println(gimnasio.siglas);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c == 0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("Las siglas a buscar no se encunetra");
                                 }
-                            }else if (option2.equals("2")){
+                            } else if (option2.equals("2")) {
                                 System.out.println("Ingrese las siglas del Gym");
                                 String nombre = input.nextLine();
-                                String nombreMinu=nombre.toLowerCase();
-                                int c=0;
+                                String nombreMinu = nombre.toLowerCase();
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.siglas.toLowerCase() == nombreMinu) {
-                                        System.out.println(gimnasio.siglas);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("Las siglas a buscar no se encunetra");
                                 }
+                            }else if (option2.equals("3")) {
+                                break;
                             }
                         }
-                    }else if (option.equals("4")) {
+                    } else if (seleccion.equals("4")) {
                         String option2;
                         while (true) {
                             System.out.println();
@@ -700,30 +711,32 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.direccion == direccion) {
-                                        System.out.println(gimnasio.direccion);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
                                 }
                                 if (c == 0) {
                                     System.out.println("La direccion a buscar no se encunetra");
                                 }
-                            }else if (option2.equals("2")) {
+                            } else if (option2.equals("2")) {
                                 System.out.println("Ingrese la direccion del Gym");
                                 String direccion = input.nextLine();
                                 String direccionMinu = direccion.toLowerCase();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.direccion.toLowerCase() == direccionMinu) {
-                                        System.out.println(gimnasio.direccion);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
                                 }
                                 if (c == 0) {
                                     System.out.println("La direccion a buscar no se encuentra");
                                 }
+                            }else if (option2.equals("3")) {
+                                break;
                             }
                         }
-                    }else if (option.equals("5")) {
+                    } else if (seleccion.equals("5")) {
                         String option2;
                         while (true) {
                             System.out.println();
@@ -738,43 +751,46 @@ public class Sistema {
                             if (option2.equals("1")) {
                                 System.out.println("Ingrese el numero de telefono a buscar");
                                 int numeroTelefono = input.nextInt();
+                                int c=0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.telefono == numeroTelefono) {
-                                        System.out.println(gimnasio.telefono);
-                                    } else {
-                                        System.out.println("El telefono a buscar no se encunetra");
+                                        System.out.println(gimnasio);
+                                        c++;
                                     }
-
+                                }if (c==0){
+                                    System.out.println("El telefono a buscar no se encunetra");
                                 }
                             } else if (option2.equals("2")) {
                                 System.out.println("Ingrese el numero de telefono a buscar");
                                 int numero = input.nextInt();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.telefono >= numero) {
-                                        System.out.println(gimnasio.telefono);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("No hay telefonos que mostrar");
                                 }
                             } else if (option2.equals("3")) {
                                 System.out.println("Ingrese el numero de telefono a buscar");
                                 int numero = input.nextInt();
-                                int c=0;
+                                int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.telefono <= numero) {
-                                        System.out.println(gimnasio.telefono);
+                                        System.out.println(gimnasio);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("No hay telefonos que mostrar");
                                 }
                             } else if (option2.equals("4")) {
                                 break;
                             }
                         }
-                    } else if (option.equals("6")) {
+                    } else if (seleccion.equals("6")) {
                         break;
                     }
                 }
@@ -795,7 +811,7 @@ public class Sistema {
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
-                    if (seleccion.equals("1")){
+                    if (seleccion.equals("1")) {
                         String option1;
                         while (true) {
                             System.out.println();
@@ -809,33 +825,36 @@ public class Sistema {
                             if (option1.equals("1")) {
                                 System.out.println("Ingrese el nombre de la sede a buscar");
                                 String sede = input.nextLine();
-                                int c=0;
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.nombre == sede) {
-                                        System.out.println(sede1.nombre);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro el nombre de la sede");
                                 }
                             } else if (option1.equals("2")) {
                                 System.out.println("Ingrese el nombre de la sede a buscar");
                                 String nombre = input.nextLine();
-                                String nombreMInus= nombre.toLowerCase();
-                                int c=0;
+                                String nombreMInus = nombre.toLowerCase();
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.nombre.toLowerCase() == nombreMInus) {
-                                        System.out.println(sede1.nombre);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0){
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro el nombre de la sede");
                                 }
-                            }else if (option1.equals("3")) {
+                            } else if (option1.equals("3")) {
                                 break;
                             }
                         }
-                    }if (seleccion.equals("2")){
+                    }
+                    if (seleccion.equals("2")) {
                         String option1;
                         while (true) {
                             System.out.println();
@@ -849,33 +868,35 @@ public class Sistema {
                             if (option1.equals("1")) {
                                 System.out.println("Ingrese la direccion de la sede a buscar");
                                 String dire = input.nextLine();
-                                int c=0;
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.direccion == dire) {
-                                        System.out.println(sede1.direccion);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro la direccion de la sede");
                                 }
                             } else if (option1.equals("2")) {
                                 System.out.println("Ingrese la direccion de la sede a buscar");
                                 String direccion = input.nextLine();
-                                String direccionMInus= direccion.toLowerCase();
-                                int c=0;
+                                String direccionMInus = direccion.toLowerCase();
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.direccion.toLowerCase() == direccionMInus) {
-                                        System.out.println(sede1.direccion);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro la direccion de la sede");
                                 }
-                            }else if (option1.equals("3")) {
+                            } else if (option1.equals("3")) {
                                 break;
                             }
                         }
-                    }if (seleccion.equals("3")){
+                    } else if (seleccion.equals("3")) {
                         String option1;
                         while (true) {
                             System.out.println();
@@ -889,34 +910,1085 @@ public class Sistema {
                             if (option1.equals("1")) {
                                 System.out.println("Ingrese la ciudad de la sede a buscar");
                                 String ciudad = input.nextLine();
-                                int c=0;
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.ciudad == ciudad) {
-                                        System.out.println(sede1.ciudad);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro la ciudad de la sede");
                                 }
                             } else if (option1.equals("2")) {
                                 System.out.println("Ingrese la ciudad de la sede a buscar");
                                 String ciudad = input.nextLine();
-                                String ciudadMInus= ciudad.toLowerCase();
-                                int c=0;
+                                String ciudadMInus = ciudad.toLowerCase();
+                                int c = 0;
                                 for (Sede sede1 : sedes) {
                                     if (sede1.ciudad.toLowerCase() == ciudadMInus) {
-                                        System.out.println(sede1.ciudad);
+                                        System.out.println(sede1);
                                         c++;
                                     }
-                                }if (c==0) {
+                                }
+                                if (c == 0) {
                                     System.out.println("No se encontro la ciudad de la sede");
                                 }
-                            }else if (option1.equals("3")) {
+                            } else if (option1.equals("3")) {
                                 break;
                             }
                         }
                     }
                 }
+            } else if (option.equals("3")) {
+                if (zonas.size() == 0) {
+                    System.out.println("la lista de zonas se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Zona 1");
+                    System.out.println("2. Zona 2");
+                    System.out.println("3. Zona 3");
+                    System.out.println("4. Zona 4");
+                    System.out.println("5. Zona 5");
+                    System.out.println("6. Volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la zona a buscar");
+                                String zona = input.nextLine();
+                                int c = 0;
+                                for (Zona zona1 : zonas) {
+                                    if (zona1.zona1 == zona) {
+                                        System.out.println(zona1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la zona a buscar");
+                                String zona = input.nextLine();
+                                String zonaMInus = zona.toLowerCase();
+                                int c = 0;
+                                for (Zona zona1 : zonas) {
+                                    if (zona1.zona1.toLowerCase() == zonaMInus) {
+                                        System.out.println(zona1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("2")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la zona a buscar");
+                                String zona = input.nextLine();
+                                int c = 0;
+                                for (Zona zona2 : zonas) {
+                                    if (zona2.zona2 == zona) {
+                                        System.out.println(zona2);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la zona a buscar");
+                                String zona = input.nextLine();
+                                String zonaMInus = zona.toLowerCase();
+                                int c = 0;
+                                for (Zona zona2 : zonas) {
+                                    if (zona2.zona2.toLowerCase() == zonaMInus) {
+                                        System.out.println(zona2);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("3")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la zona a buscar");
+                                String zona = input.nextLine();
+                                int c = 0;
+                                for (Zona zona3 : zonas) {
+                                    if (zona3.zona3 == zona) {
+                                        System.out.println(zona3);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la zona a buscar");
+                                String zona = input.nextLine();
+                                String zona3MInus = zona.toLowerCase();
+                                int c = 0;
+                                for (Zona zona3 : zonas) {
+                                    if (zona3.zona3.toLowerCase() == zona3MInus) {
+                                        System.out.println(zona3);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("4")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la zona a buscar");
+                                String zona = input.nextLine();
+                                int c = 0;
+                                for (Zona zona4 : zonas) {
+                                    if (zona4.zona4 == zona) {
+                                        System.out.println(zona4);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la zona a buscar");
+                                String zona = input.nextLine();
+                                String zona4MInus = zona.toLowerCase();
+                                int c = 0;
+                                for (Zona zona4 : zonas) {
+                                    if (zona4.zona4.toLowerCase() == zona4MInus) {
+                                        System.out.println(zona4);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("5")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la zona a buscar");
+                                String zona = input.nextLine();
+                                int c = 0;
+                                for (Zona zona5 : zonas) {
+                                    if (zona5.zona5 == zona) {
+                                        System.out.println(zona5);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la zona a buscar");
+                                String zona = input.nextLine();
+                                String zona5MInus = zona.toLowerCase();
+                                int c = 0;
+                                for (Zona zona5 : zonas) {
+                                    if (zona5.zona5.toLowerCase() == zona5MInus) {
+                                        System.out.println(zona5);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("6")) {
+                        break;
+                    }
+                }
+            }else if (option.equals("4")) {
+                if (cursos.size() == 0) {
+                    System.out.println("la lista de cursos se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Nombre");
+                    System.out.println("2. Codigo");
+                    System.out.println("3. Intensidad horaria");
+                    System.out.println("4. Volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre del curso a buscar");
+                                String curso = input.nextLine();
+                                int c = 0;
+                                for (Cursos curso1 : cursos) {
+                                    if (curso1.nombre == curso) {
+                                        System.out.println(curso1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el curso");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el curso a buscar");
+                                String curso = input.nextLine();
+                                String cursoMInus = curso.toLowerCase();
+                                int c = 0;
+                                for (Cursos curso1 : cursos) {
+                                    if (curso1.nombre.toLowerCase() == cursoMInus) {
+                                        System.out.println(curso1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la zona");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("2")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese el codigo a buscar");
+                                int codigo = input.nextInt();
+                                int c=0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.codigo == codigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("El codigo a buscar no se encunetra");
+                                }
+                            } else if (option2.equals("2")) {
+                                System.out.println("Ingrese el codigo a buscar");
+                                int cidigo = input.nextInt();
+                                int c = 0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.codigo >= cidigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No hay codigos que mostrar");
+                                }
+                            } else if (option2.equals("3")) {
+                                System.out.println("Ingrese el codigo a buscar");
+                                int codigo = input.nextInt();
+                                int c = 0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.codigo <= codigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No hay codigos que mostrar");
+                                }
+                            } else if (option2.equals("4")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("3")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese el la intesidad de hora a buscar");
+                                int codigo = input.nextInt();
+                                int c=0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.intesidadHora == codigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("la intensidad de hora a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("2")) {
+                                System.out.println("Ingrese el la intesidad de hora a buscar");
+                                int codigo = input.nextInt();
+                                int c = 0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.codigo >= codigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No hay intensidad de hora que mostrar");
+                                }
+                            } else if (option2.equals("3")) {
+                                System.out.println("Ingrese el la intesidad de hora a buscar");
+                                int codigo = input.nextInt();
+                                int c = 0;
+                                for (Cursos curso : cursos) {
+                                    if (curso.codigo <= codigo) {
+                                        System.out.println(curso);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No hay intensidad de hora que mostrar");
+                                }
+                            } else if (option2.equals("4")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("4")) {
+                        break;
+                    }
+                }
+            }else if (option.equals("5")) {
+                if (usuarios.size() == 0) {
+                    System.out.println("la lista de usuarios se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Cedula");
+                    System.out.println("2. Nombre");
+                    System.out.println("3. Apellido");
+                    System.out.println("4. Correo");
+                    System.out.println("5. Volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c=0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.cedula == cedula) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("La cedula a buscar no se encunetra");
+                                }
+                            } else if (option2.equals("2")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.cedula >= cedula) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La cedula a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("3")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.cedula <= cedula) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La cedula a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("4")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("2")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre a buscar");
+                                String nombre = input.nextLine();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.nombre == nombre) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el nombre");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el nombre a buscar");
+                                String nombre = input.nextLine();
+                                String nombreMInus = nombre.toLowerCase();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.nombre.toLowerCase() == nombreMInus) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el nombre");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("3")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el apellido a buscar");
+                                String apellido = input.nextLine();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.apellido == apellido) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el apellido");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el apellido a buscar");
+                                String apellido = input.nextLine();
+                                String apellidoMInus = apellido.toLowerCase();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.apellido.toLowerCase() == apellidoMInus) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el apellido");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("4")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el correo a buscar");
+                                String correo = input.nextLine();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.correo == correo) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el correo");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el correo a buscar");
+                                String correo = input.nextLine();
+                                String correoMInus = correo.toLowerCase();
+                                int c = 0;
+                                for (Usuario usuario : usuarios) {
+                                    if (usuario.correo.toLowerCase() == correoMInus) {
+                                        System.out.println(usuario);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro ningun correo");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("5")) {
+                        break;
+                    }
+                }
+            }else if (option.equals("6")) {
+                if (entrenadores.size() == 0) {
+                    System.out.println("la lista de entrenadores se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Cedula");
+                    System.out.println("2. Nombre");
+                    System.out.println("3. Apellido");
+                    System.out.println("4. Correo");
+                    System.out.println("5. Volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option2;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor minimo");
+                            System.out.println("3. valor maximo");
+                            System.out.println("4. Volver");
+                            System.out.println();
+                            option2 = input.next();
+                            if (option2.equals("1")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c=0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.documento == cedula) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }if (c==0){
+                                    System.out.println("La cedula a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("2")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.documento >= cedula) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La cedula a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("3")) {
+                                System.out.println("Ingrese la cedula a buscar");
+                                int cedula = input.nextInt();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.documento <= cedula) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("La cedula a buscar no se encuentra");
+                                }
+                            } else if (option2.equals("4")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("2")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre a buscar");
+                                String nombre = input.nextLine();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.nombre == nombre) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el nombre");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el nombre a buscar");
+                                String nombre = input.nextLine();
+                                String nombreMInus = nombre.toLowerCase();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.nombre.toLowerCase() == nombreMInus) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el nombre");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("3")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el apellido a buscar");
+                                String apellido = input.nextLine();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.apellido == apellido) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el apellido");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el apellido a buscar");
+                                String apellido = input.nextLine();
+                                String apellidoMInus = apellido.toLowerCase();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.apellido.toLowerCase() == apellidoMInus) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el apellido");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("4")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el correo a buscar");
+                                String correo = input.nextLine();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.correo == correo) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro el correo");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese el correo a buscar");
+                                String correo = input.nextLine();
+                                String correoMInus = correo.toLowerCase();
+                                int c = 0;
+                                for (Entrenadores entrenadore : entrenadores) {
+                                    if (entrenadore.correo.toLowerCase() == correoMInus) {
+                                        System.out.println(entrenadore);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro ningun correo");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }
+                    else if (seleccion.equals("5")) {
+                        break;
+                    }
+                }
+            }else if (option.equals("7")) {
+                if (rutinas.size() == 0) {
+                    System.out.println("la lista de rutinas se encuentra vacía");
+                    return;
+                }
+                String seleccion;
+                while (true) {
+                    System.out.println();
+                    System.out.println("-----------------------------");
+                    System.out.println("Seleccione la opcion con la cual desea hacer la busqueda");
+                    System.out.println("1. Rutina 1");
+                    System.out.println("2. Rutina 2");
+                    System.out.println("3. Rutina 3");
+                    System.out.println("4. Rutina 4");
+                    System.out.println("5. Rutina 5");
+                    System.out.println("6. Volver");
+                    System.out.println("-----------------------------");
+                    System.out.println();
+                    seleccion = input.next();
+                    if (seleccion.equals("1")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la rutina a buscar");
+                                String rutina = input.nextLine();
+                                int c = 0;
+                                for (Rutinas rutina1 : rutinas) {
+                                    if (rutina1.rutina1== rutina) {
+                                        System.out.println(rutina1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la rutina a buscar");
+                                String rutina = input.nextLine();
+                                String rutinaMInus = rutina.toLowerCase();
+                                int c = 0;
+                                for (Rutinas rutina1 : rutinas) {
+                                    if (rutina1.rutina2.toLowerCase() == rutinaMInus) {
+                                        System.out.println(rutina1);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("2")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la rutina a buscar");
+                                String rutina = input.nextLine();
+                                int c = 0;
+                                for (Rutinas rutina2 : rutinas) {
+                                    if (rutina2.rutina2 == rutina) {
+                                        System.out.println(rutina2);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la rutina a buscar");
+                                String rutina = input.nextLine();
+                                String rutinaMInus = rutina.toLowerCase();
+                                int c = 0;
+                                for (Rutinas rutina2 : rutinas) {
+                                    if (rutina2.rutina2.toLowerCase() == rutinaMInus) {
+                                        System.out.println(rutina2);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("3")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la rutina a buscar");
+                                String rutina = input.nextLine();
+                                int c = 0;
+                                for (Rutinas rutina3 : rutinas) {
+                                    if (rutina3.rutina3 == rutina) {
+                                        System.out.println(rutina3);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la rutina a buscar");
+                                String rutina = input.nextLine();
+                                String rutina3MInus = rutina.toLowerCase();
+                                int c = 0;
+                                for (Rutinas rutina3 : rutinas) {
+                                    if (rutina3.rutina3.toLowerCase() == rutina3MInus) {
+                                        System.out.println(rutina3);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("4")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la rutina a buscar");
+                                String rutina = input.nextLine();
+                                int c = 0;
+                                for (Rutinas rutina4 : rutinas) {
+                                    if (rutina4.rutina4 == rutina) {
+                                        System.out.println(rutina4);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la rutina a buscar");
+                                String rutina = input.nextLine();
+                                String rutina4MInus = rutina.toLowerCase();
+                                int c = 0;
+                                for (Rutinas rutina4 : rutinas) {
+                                    if (rutina4.rutina4.toLowerCase() == rutina4MInus) {
+                                        System.out.println(rutina4);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("5")) {
+                        String option1;
+                        while (true) {
+                            System.out.println();
+                            System.out.println("-----------------------------");
+                            System.out.println("Seleccione la opcion que desee ");
+                            System.out.println("1. valor exacto");
+                            System.out.println("2. Valor sin considerar mayusculas");
+                            System.out.println("3. Volver");
+                            System.out.println();
+                            option1 = input.next();
+                            if (option1.equals("1")) {
+                                System.out.println("Ingrese el nombre de la rutina a buscar");
+                                String rutina = input.nextLine();
+                                int c = 0;
+                                for (Rutinas rutina5 : rutinas) {
+                                    if (rutina5.rutina5 == rutina) {
+                                        System.out.println(rutina5);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            }else if (option1.equals("2")) {
+                                System.out.println("Ingrese la rutina a buscar");
+                                String rutina = input.nextLine();
+                                String rutina5MInus = rutina.toLowerCase();
+                                int c = 0;
+                                for (Rutinas rutina5 : rutinas) {
+                                    if (rutina5.rutina5.toLowerCase() == rutina5MInus) {
+                                        System.out.println(rutina5);
+                                        c++;
+                                    }
+                                }
+                                if (c == 0) {
+                                    System.out.println("No se encontro la rutina");
+                                }
+                            } else if (option1.equals("3")) {
+                                break;
+                            }
+                        }
+                    }else if (seleccion.equals("6")) {
+                        break;
+                    }
+                }
+            }else if (option.equals("8")) {
+                break;
             }
         }
     }
