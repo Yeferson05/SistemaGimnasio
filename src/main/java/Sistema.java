@@ -254,6 +254,7 @@ public class Sistema {
                 String nombreGym=input.next();
                 System.out.println("-   Ingrese las siglas: ");
                 String siglas=input.next();
+                input.nextLine();
                 for (Gimnasios gimnasio : gimnasios) {
                     if (gimnasio.siglas.equals(siglas)) {
                         System.out.println("---Estas siglas ya existen---");
@@ -262,7 +263,6 @@ public class Sistema {
                 }
                 System.out.println("-   Ingrese la direccion: ");
                 String direccion=input.nextLine();
-                input.nextLine();
                 System.out.println("-   Ingrese el telefono del gimnasio: ");
                 int telefono=input.nextInt();
                 Gimnasios nuevoGym = new Gimnasios(nit,nombreGym,siglas,direccion,telefono);
@@ -323,9 +323,9 @@ public class Sistema {
                 String nombreSede=input.next();
                 System.out.println("-   Ingrese la ciudad donde está ubicada");
                 String ciudadSede=input.next();
+                input.nextLine();
                 System.out.println("-   Ingrese la dirección:");
                 String direccionSede=input.nextLine();
-                input.nextLine();
                 Sede nuevaSede = new Sede(nombreSede,ciudadSede,direccionSede);
                 sedes.add(nuevaSede);
                 System.out.println("la sede se registró correctamente");
