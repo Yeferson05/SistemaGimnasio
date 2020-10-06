@@ -16,12 +16,7 @@ public class Gimnasios {
 
     @Override
     public String toString() {
-        return "Gym " + "\n" +
-                "\t Nit : " + nit + "\n" +
-                "\t nombre : " + nombre + "\n" +
-                "\t siglas : " + siglas + "\n" +
-                "\t direccion : " + direccion + "\n" +
-                "\t telefono : " + telefono + "\n" +
-                "\t ";
+        return "-   Gimnasio:    " + "Nombre:"+ nombre +"," + " NIT:" + nit +"," + " Siglas:"+siglas+
+                ","+ " Dirección:"+ direccion +","+ " Telefono:" + telefono + ".";
     }
 }

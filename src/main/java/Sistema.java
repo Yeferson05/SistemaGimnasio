@@ -42,7 +42,7 @@ public class Sistema {
         System.out.println("-                   Iniciar sesión                   -");
         System.out.println("-   Ingrese su numero de documento/correo electronico:");
         String ingreso= input.next();
-        boolean res=true;
+        boolean res;
         try {
             Integer.parseInt(ingreso);
             res = true;
@@ -217,56 +217,57 @@ public class Sistema {
         String option;
         while(true){
             System.out.println();
-            System.out.println("-----------------------------");
-            System.out.println("escoja una opcion");
+            System.out.println("-------       Menú Gimnasios       -------");
+            System.out.println("Escoja una opcion");
             System.out.println("1. Ver gimnasios");
             System.out.println("2. Crear gimnasio");
             System.out.println("3. Editar gimnasio");
             System.out.println("4. Eliminar gimnasio ");
             System.out.println("5. Cancelar ");
-            System.out.println("-----------------------------");
+            System.out.println("------------------------------------------");
             System.out.println();
             option=input.next();
             if(option.equals("1")){
                 if(gimnasios.size() == 0){
-                    System.out.println("la lista de gimnasios se encuentra vacía");
+                    System.out.println("---La lista de gimnasios se encuentra vacía.---");
                     return;
                 }
-                System.out.println("lista de gimnasios");
+                System.out.println("---Lista de gimnasios---");
                 for (Gimnasios gimnasio : gimnasios) {
                     System.out.println(gimnasio);
                 }
             }else if(option.equals("2")){
-                System.out.println("ingrese el NIT del gimnasio");
+                System.out.println("-------       Crear nuevo Gimnasio       -------"):
+                System.out.println("-   Ingrese el NIT del gimnasio: ");
                 int nit = input.nextInt();
                 if (nit < 0) {
-                    System.out.println("ingresaste un documento invalidad");
+                    System.out.println("---Ingresaste un documento invalido.---");
                     return;
                 }
                 for (Gimnasios gimnasio : gimnasios) {
                     if (gimnasio.nit == nit) {
-                        System.out.println("Dicho gimnasio ya existe");
+                        System.out.println("---Ya existe un gimnasio con este NIT---");
                         return;
                     }
                 }
-                System.out.println("ingrese el nombre del gimnasio");
+                System.out.println("-   Ingrese el nombre del nuevo gimnasio: ");
                 String nombreGym=input.next();
-                System.out.println("ingrese las siglas ");
+                System.out.println("-   Ingrese las siglas: ");
                 String siglas=input.next();
                 for (Gimnasios gimnasio : gimnasios) {
                     if (gimnasio.siglas.equals(siglas)) {
-                        System.out.println("Estas siglas ya existen");
+                        System.out.println("---Estas siglas ya existen---");
                         return;
                     }
                 }
-                System.out.println("ingrese la direccion");
+                System.out.println("-   Ingrese la direccion: ");
                 String direccion=input.nextLine();
                 input.nextLine();
-                System.out.println("ingrese el telefono del gimnasio");
+                System.out.println("-   Ingrese el telefono del gimnasio: ");
                 int telefono=input.nextInt();
                 Gimnasios nuevoGym = new Gimnasios(nit,nombreGym,siglas,direccion,telefono);
                 gimnasios.add(nuevoGym);
-                System.out.println("el gimnasio se registró correctamente");
+                System.out.println("---¡Registro del nuevo Gimnasio exitoso!---");
             }else if(option.equals("3")){
                 System.out.println();
             }else if(option.equals("4")){
