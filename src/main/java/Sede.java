@@ -12,10 +12,6 @@ public class Sede {
 
     @Override
     public String toString() {
-        return "Gimnasio: " + "\n" +
-                "\t nombre : " + nombre + "\n" +
-                "\t ciudad : " + ciudad + "\n" +
-                "\t direccion : " + direccion + "\n" +
-                "\t ";
+        return "-   Sede:    " + "Nombre:"+ nombre +"," + " Dirección:" + direccion +"," + " Ciudad:"+ciudad+".";
     }
 }

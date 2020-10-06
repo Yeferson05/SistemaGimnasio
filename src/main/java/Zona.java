@@ -16,12 +16,7 @@ public class Zona {
 
     @Override
     public String toString() {
-        return "Zonas " + "\n" +
-                "\t zona 1 : " + zona1 + "\n" +
-                "\t zona 2 : " + zona2 + "\n" +
-                "\t zona 3 : " + zona3 + "\n" +
-                "\t zona 4 : " + zona4 + "\n" +
-                "\t zona 5 : " + zona5 + "\n" +
-                "\t ";
+        return "-   Zona:    " + "Zona #1:"+ zona1 +"," + " Zona #2:" + zona2 +"," + " Zona #3:"+zona3+
+                ","+ " Zona #4:"+ zona4 +","+ " Zona #5:" + zona5 + ".";
     }
 }
