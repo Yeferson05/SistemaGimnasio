@@ -645,10 +645,11 @@ public class Sistema {
                             option2 = input.next();
                             if (option2.equals("1")) {
                                 System.out.println("-   Ingrese el nombre del gimnasio: ");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.nombre == nombre) {
+                                    if (gimnasio.nombre.equals(nombre)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -657,12 +658,13 @@ public class Sistema {
                                     System.out.println("---El nombre a buscar no fue encontrado---");
                                 }
                             } else if (option2.equals("2")) {
-                                System.out.println("-   Ingrese el nombre del gimnasio: ");
+                                System.out.println("Ingrese el nombre del Gym");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 String nombreMinu = nombre.toLowerCase();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.nombre.toLowerCase() == nombreMinu) {
+                                    if (gimnasio.nombre.toLowerCase().equals(nombreMinu)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -686,11 +688,12 @@ public class Sistema {
                             System.out.println();
                             option2 = input.next();
                             if (option2.equals("1")) {
-                                System.out.println("-   Ingrese las siglas del Gimnasio: ");
+                                System.out.println("Ingrese las siglas del Gym");
+                                input.nextLine();
                                 String sigla = input.next();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.siglas == sigla) {
+                                    if (gimnasio.siglas.equals(sigla)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -699,12 +702,13 @@ public class Sistema {
                                     System.out.println("---Las siglas a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("2")) {
-                                System.out.println("-   Ingrese las siglas del gimnasio: ");
+                                System.out.println("Ingrese las siglas del Gym");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 String nombreMinu = nombre.toLowerCase();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.siglas.toLowerCase() == nombreMinu) {
+                                    if (gimnasio.siglas.toLowerCase().equals(nombreMinu)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -729,10 +733,11 @@ public class Sistema {
                             option2 = input.next();
                             if (option2.equals("1")) {
                                 System.out.println("Ingrese la direccion Gym");
+                                input.nextLine();
                                 String direccion = input.next();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.direccion == direccion) {
+                                    if (gimnasio.direccion.equals(direccion)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -741,12 +746,13 @@ public class Sistema {
                                     System.out.println("---La direccion a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("2")) {
-                                System.out.println("-   Ingrese la direccion del Gimnasio: ");
+                                System.out.println("Ingrese la direccion del Gym");
+                                input.nextLine();
                                 String direccion = input.nextLine();
                                 String direccionMinu = direccion.toLowerCase();
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
-                                    if (gimnasio.direccion.toLowerCase() == direccionMinu) {
+                                    if (gimnasio.direccion.toLowerCase().equals(direccionMinu)) {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
@@ -845,11 +851,12 @@ public class Sistema {
                             System.out.println();
                             option1 = input.next();
                             if (option1.equals("1")) {
-                                System.out.println("-   Ingrese el nombre de la sede a buscar: ");
+                                System.out.println("Ingrese el nombre de la sede a buscar");
+                                input.nextLine();
                                 String sede = input.nextLine();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.nombre == sede) {
+                                    if (sede1.nombre.equals(sede)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -858,12 +865,13 @@ public class Sistema {
                                     System.out.println("---No se encontro el nombre de la sede---");
                                 }
                             } else if (option1.equals("2")) {
-                                System.out.println("-   Ingrese el nombre de la sede a buscar: ");
+                                System.out.println("Ingrese el nombre de la sede a buscar");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 String nombreMInus = nombre.toLowerCase();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.nombre.toLowerCase() == nombreMInus) {
+                                    if (sede1.nombre.toLowerCase().equals(nombreMInus)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -889,10 +897,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("Ingrese la direccion de la sede a buscar");
+                                input.nextLine();
                                 String dire = input.nextLine();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.direccion == dire) {
+                                    if (sede1.direccion.equals(dire)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -901,12 +910,13 @@ public class Sistema {
                                     System.out.println("---No se encontro la direccion de la sede---");
                                 }
                             } else if (option1.equals("2")) {
-                                System.out.println("-   Ingrese la direccion de la sede a buscar: ");
+                                System.out.println("Ingrese la direccion de la sede a buscar");
+                                input.nextLine();
                                 String direccion = input.nextLine();
                                 String direccionMInus = direccion.toLowerCase();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.direccion.toLowerCase() == direccionMInus) {
+                                    if (sede1.direccion.toLowerCase().equals(direccionMInus)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -930,11 +940,12 @@ public class Sistema {
                             System.out.println();
                             option1 = input.next();
                             if (option1.equals("1")) {
-                                System.out.println("-   Ingrese la ciudad de la sede a buscar: ");
+                                System.out.println("Ingrese la ciudad de la sede a buscar");
+                                input.nextLine();
                                 String ciudad = input.nextLine();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.ciudad == ciudad) {
+                                    if (sede1.ciudad.equals(ciudad)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -944,11 +955,12 @@ public class Sistema {
                                 }
                             } else if (option1.equals("2")) {
                                 System.out.println("-  Ingrese la ciudad de la sede a buscar: ");
+                                input.nextLine();
                                 String ciudad = input.nextLine();
                                 String ciudadMInus = ciudad.toLowerCase();
                                 int c = 0;
                                 for (Sede sede1 : sedes) {
-                                    if (sede1.ciudad.toLowerCase() == ciudadMInus) {
+                                    if (sede1.ciudad.toLowerCase().equals(ciudadMInus)) {
                                         System.out.println(sede1);
                                         c++;
                                     }
@@ -994,10 +1006,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la zona a buscar: ");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 int c = 0;
                                 for (Zona zona1 : zonas) {
-                                    if (zona1.zona1 == zona) {
+                                    if (zona1.zona1.equals(zona)) {
                                         System.out.println(zona1);
                                         c++;
                                     }
@@ -1007,11 +1020,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 String zonaMInus = zona.toLowerCase();
                                 int c = 0;
                                 for (Zona zona1 : zonas) {
-                                    if (zona1.zona1.toLowerCase() == zonaMInus) {
+                                    if (zona1.zona1.toLowerCase().equals(zonaMInus)) {
                                         System.out.println(zona1);
                                         c++;
                                     }
@@ -1036,10 +1050,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la zona a buscar: ");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 int c = 0;
                                 for (Zona zona2 : zonas) {
-                                    if (zona2.zona2 == zona) {
+                                    if (zona2.zona2.equals(zona)) {
                                         System.out.println(zona2);
                                         c++;
                                     }
@@ -1049,11 +1064,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 String zonaMInus = zona.toLowerCase();
                                 int c = 0;
                                 for (Zona zona2 : zonas) {
-                                    if (zona2.zona2.toLowerCase() == zonaMInus) {
+                                    if (zona2.zona2.toLowerCase().equals(zonaMInus)) {
                                         System.out.println(zona2);
                                         c++;
                                     }
@@ -1078,10 +1094,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 int c = 0;
                                 for (Zona zona3 : zonas) {
-                                    if (zona3.zona3 == zona) {
+                                    if (zona3.zona3.equals(zona)) {
                                         System.out.println(zona3);
                                         c++;
                                     }
@@ -1091,11 +1108,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 String zona3MInus = zona.toLowerCase();
                                 int c = 0;
                                 for (Zona zona3 : zonas) {
-                                    if (zona3.zona3.toLowerCase() == zona3MInus) {
+                                    if (zona3.zona3.toLowerCase().equals(zona3MInus)) {
                                         System.out.println(zona3);
                                         c++;
                                     }
@@ -1120,10 +1138,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 int c = 0;
                                 for (Zona zona4 : zonas) {
-                                    if (zona4.zona4 == zona) {
+                                    if (zona4.zona4.equals(zona)) {
                                         System.out.println(zona4);
                                         c++;
                                     }
@@ -1133,11 +1152,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 String zona4MInus = zona.toLowerCase();
                                 int c = 0;
                                 for (Zona zona4 : zonas) {
-                                    if (zona4.zona4.toLowerCase() == zona4MInus) {
+                                    if (zona4.zona4.toLowerCase().equals(zona4MInus)) {
                                         System.out.println(zona4);
                                         c++;
                                     }
@@ -1162,10 +1182,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 int c = 0;
                                 for (Zona zona5 : zonas) {
-                                    if (zona5.zona5 == zona) {
+                                    if (zona5.zona5.equals(zona)) {
                                         System.out.println(zona5);
                                         c++;
                                     }
@@ -1175,11 +1196,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la zona a buscar:");
+                                input.nextLine();
                                 String zona = input.nextLine();
                                 String zona5MInus = zona.toLowerCase();
                                 int c = 0;
                                 for (Zona zona5 : zonas) {
-                                    if (zona5.zona5.toLowerCase() == zona5MInus) {
+                                    if (zona5.zona5.toLowerCase().equals(zona5MInus)) {
                                         System.out.println(zona5);
                                         c++;
                                     }
@@ -1225,10 +1247,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre del curso a buscar:");
+                                input.nextLine();
                                 String curso = input.nextLine();
                                 int c = 0;
                                 for (Cursos curso1 : cursos) {
-                                    if (curso1.nombre == curso) {
+                                    if (curso1.nombre.equals(curso)) {
                                         System.out.println(curso1);
                                         c++;
                                     }
@@ -1238,11 +1261,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el curso a buscar:");
+                                input.nextLine();
                                 String curso = input.nextLine();
                                 String cursoMInus = curso.toLowerCase();
                                 int c = 0;
                                 for (Cursos curso1 : cursos) {
-                                    if (curso1.nombre.toLowerCase() == cursoMInus) {
+                                    if (curso1.nombre.toLowerCase().equals(cursoMInus)) {
                                         System.out.println(curso1);
                                         c++;
                                     }
@@ -1452,10 +1476,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre a buscar:");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.nombre == nombre) {
+                                    if (usuario.nombre.equals(nombre)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1465,11 +1490,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el nombre a buscar:");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 String nombreMInus = nombre.toLowerCase();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.nombre.toLowerCase() == nombreMInus) {
+                                    if (usuario.nombre.toLowerCase().equals(nombreMInus)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1494,10 +1520,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el apellido a buscar:");
+                                input.nextLine();
                                 String apellido = input.nextLine();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.apellido == apellido) {
+                                    if (usuario.apellido.equals(apellido)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1507,11 +1534,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el apellido a buscar:");
+                                input.nextLine();
                                 String apellido = input.nextLine();
                                 String apellidoMInus = apellido.toLowerCase();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.apellido.toLowerCase() == apellidoMInus) {
+                                    if (usuario.apellido.toLowerCase().equals(apellidoMInus)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1537,10 +1565,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el correo a buscar: ");
+                                input.nextLine();
                                 String correo = input.nextLine();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.correo == correo) {
+                                    if (usuario.correo.equals(correo)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1550,11 +1579,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el correo a buscar: ");
+                                input.nextLine();
                                 String correo = input.nextLine();
                                 String correoMInus = correo.toLowerCase();
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
-                                    if (usuario.correo.toLowerCase() == correoMInus) {
+                                    if (usuario.correo.toLowerCase().equals(correoMInus)) {
                                         System.out.println(usuario);
                                         c++;
                                     }
@@ -1657,10 +1687,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre a buscar: ");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.nombre == nombre) {
+                                    if (entrenadore.nombre.equals(nombre)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1670,11 +1701,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el nombre a buscar: ");
+                                input.nextLine();
                                 String nombre = input.nextLine();
                                 String nombreMInus = nombre.toLowerCase();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.nombre.toLowerCase() == nombreMInus) {
+                                    if (entrenadore.nombre.toLowerCase().equals(nombreMInus)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1699,10 +1731,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el apellido a buscar: ");
+                                input.nextLine();
                                 String apellido = input.nextLine();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.apellido == apellido) {
+                                    if (entrenadore.apellido.equals(apellido)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1712,11 +1745,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese el apellido a buscar: ");
+                                input.nextLine();
                                 String apellido = input.nextLine();
                                 String apellidoMInus = apellido.toLowerCase();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.apellido.toLowerCase() == apellidoMInus) {
+                                    if (entrenadore.apellido.toLowerCase().equals(apellidoMInus)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1742,10 +1776,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el correo a buscar: ");
+                                input.nextLine();
                                 String correo = input.nextLine();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.correo == correo) {
+                                    if (entrenadore.correo.equals(correo)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1755,11 +1790,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("Ingrese el correo a buscar");
+                                input.nextLine();
                                 String correo = input.nextLine();
                                 String correoMInus = correo.toLowerCase();
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
-                                    if (entrenadore.correo.toLowerCase() == correoMInus) {
+                                    if (entrenadore.correo.toLowerCase().equals(correoMInus)) {
                                         System.out.println(entrenadore);
                                         c++;
                                     }
@@ -1808,10 +1844,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 int c = 0;
                                 for (Rutinas rutina1 : rutinas) {
-                                    if (rutina1.rutina1== rutina) {
+                                    if (rutina1.rutina1.equals(rutina)) {
                                         System.out.println(rutina1);
                                         c++;
                                     }
@@ -1821,11 +1858,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la rutina a buscar:");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 String rutinaMInus = rutina.toLowerCase();
                                 int c = 0;
                                 for (Rutinas rutina1 : rutinas) {
-                                    if (rutina1.rutina2.toLowerCase() == rutinaMInus) {
+                                    if (rutina1.rutina2.toLowerCase().equals(rutinaMInus)) {
                                         System.out.println(rutina1);
                                         c++;
                                     }
@@ -1850,10 +1888,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 int c = 0;
                                 for (Rutinas rutina2 : rutinas) {
-                                    if (rutina2.rutina2 == rutina) {
+                                    if (rutina2.rutina2.equals(rutina)) {
                                         System.out.println(rutina2);
                                         c++;
                                     }
@@ -1863,11 +1902,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 String rutinaMInus = rutina.toLowerCase();
                                 int c = 0;
                                 for (Rutinas rutina2 : rutinas) {
-                                    if (rutina2.rutina2.toLowerCase() == rutinaMInus) {
+                                    if (rutina2.rutina2.toLowerCase().equals(rutinaMInus)) {
                                         System.out.println(rutina2);
                                         c++;
                                     }
@@ -1892,10 +1932,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 int c = 0;
                                 for (Rutinas rutina3 : rutinas) {
-                                    if (rutina3.rutina3 == rutina) {
+                                    if (rutina3.rutina3.equals(rutina)) {
                                         System.out.println(rutina3);
                                         c++;
                                     }
@@ -1905,11 +1946,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 String rutina3MInus = rutina.toLowerCase();
                                 int c = 0;
                                 for (Rutinas rutina3 : rutinas) {
-                                    if (rutina3.rutina3.toLowerCase() == rutina3MInus) {
+                                    if (rutina3.rutina3.toLowerCase().equals(rutina3MInus)) {
                                         System.out.println(rutina3);
                                         c++;
                                     }
@@ -1934,10 +1976,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("-   Ingrese el nombre de la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 int c = 0;
                                 for (Rutinas rutina4 : rutinas) {
-                                    if (rutina4.rutina4 == rutina) {
+                                    if (rutina4.rutina4.equals(rutina)) {
                                         System.out.println(rutina4);
                                         c++;
                                     }
@@ -1947,11 +1990,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la rutina a buscar:   ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 String rutina4MInus = rutina.toLowerCase();
                                 int c = 0;
                                 for (Rutinas rutina4 : rutinas) {
-                                    if (rutina4.rutina4.toLowerCase() == rutina4MInus) {
+                                    if (rutina4.rutina4.toLowerCase().equals(rutina4MInus)) {
                                         System.out.println(rutina4);
                                         c++;
                                     }
@@ -1976,10 +2020,11 @@ public class Sistema {
                             option1 = input.next();
                             if (option1.equals("1")) {
                                 System.out.println("---Ingrese el nombre de la rutina a buscar---");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 int c = 0;
                                 for (Rutinas rutina5 : rutinas) {
-                                    if (rutina5.rutina5 == rutina) {
+                                    if (rutina5.rutina5.equals(rutina)) {
                                         System.out.println(rutina5);
                                         c++;
                                     }
@@ -1989,11 +2034,12 @@ public class Sistema {
                                 }
                             }else if (option1.equals("2")) {
                                 System.out.println("-   Ingrese la rutina a buscar: ");
+                                input.nextLine();
                                 String rutina = input.nextLine();
                                 String rutina5MInus = rutina.toLowerCase();
                                 int c = 0;
                                 for (Rutinas rutina5 : rutinas) {
-                                    if (rutina5.rutina5.toLowerCase() == rutina5MInus) {
+                                    if (rutina5.rutina5.toLowerCase().equals(rutina5MInus)) {
                                         System.out.println(rutina5);
                                         c++;
                                     }
