@@ -336,7 +336,7 @@ public class Sistema {
                     String Siglas =  input.next();
                     boolean comprobante = false;
                     for (Gimnasios gymsigla : gimnasios){
-                        if (gymsigla.siglas.equals(Siglas)){
+                        if (gymsigla.siglas.equalsIgnoreCase(Siglas)){
                             comprobante = true;
                             System.out.println("Siglas: "+gymsigla.siglas);
                             input.nextLine();
@@ -384,12 +384,70 @@ public class Sistema {
                         }
                     }
                     if (comprobante == false){
-                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
+                        System.out.println("---No se encontró ningún gimnasio con estas siglas---");
                     }
                 }
 
             }else if(option.equals("4")){
-                // Couch();
+                System.out.println("-------       Eliminar Gimnasios       -------");
+                System.out.println("1. Seleccionar por NIT");
+                System.out.println("2. Seleccionar por Siglas");
+                String opcioneliminar = input.next();
+                if (opcioneliminar.equals("1")){
+                    System.out.println("-   Ingrese el NIT: ");
+                    String nitEliminar = input.next();
+                    String nitEdit = nitEliminar.replace(".","");
+                    int nitEntero = Integer.parseInt(nitEdit);
+                    boolean comprobar = false;
+                    for (Gimnasios gymeliminar : gimnasios){
+                        if (gymeliminar.nit == nitEntero){
+                            comprobar = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                gimnasios.remove(gymeliminar);
+                                System.out.println("---El gimnasio ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del gimnasio.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (comprobar == false){
+                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
+                    }
+                }else if(opcioneliminar.equals("2")){
+                    System.out.println("-   Ingrese las siglas: ");
+                    String siglasEliminar = input.next();
+                    boolean check = false;
+                    for (Gimnasios gymdel :  gimnasios){
+                        if (gymdel.siglas.equalsIgnoreCase(siglasEliminar)){
+                            check = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                gimnasios.remove(gymdel);
+                                System.out.println("---El gimnasio ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del gimnasio.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (check == false){
+                        System.out.println("---No se encontró ningún gimnasio con estas siglas---");
+                    }
+                }
             }else if(option.equals("5")){
                 break;
             }
