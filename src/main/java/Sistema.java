@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Sistema {
@@ -322,8 +320,10 @@ public class Sistema {
                                     gyms.telefono = intTel;
                                 }
                                 System.out.println("---Guardado exitoso.---");
+                                break;
                             }else if (opcionGuardar.equals("N")){
                                 System.out.println("---Guardado cancelado.---");
+                                break;
                             }else{
                                 System.out.println("---Ingresa Y o N---");
                             }
@@ -377,8 +377,10 @@ public class Sistema {
                                     gymsigla.telefono = intTel;
                                 }
                                 System.out.println("---Guardado exitoso.---");
+                                break;
                             }else if (opcionGuardar.equals("N")){
                                 System.out.println("---Guardado cancelado.---");
+                                break;
                             }else{
                                 System.out.println("---Ingresa Y o N---");
                             }
@@ -491,9 +493,89 @@ public class Sistema {
                 sedes.add(nuevaSede);
                 System.out.println("la sede se registró correctamente");
             }else if(option.equals("3")){
-                System.out.println();
+                System.out.println("-------       Editar Sedes       -------");
+                System.out.println("1. Seleccionar por Dirección");
+                String seleccion = input.next();
+                if (seleccion.equals("1")){
+                    System.out.println("---Seleccionar por Dirección---");
+                    System.out.println("-   Ingrese la dirección: ");
+                    input.nextLine();
+                    String dirBuscar = input.nextLine();
+                    boolean comprobante = false;
+                    for (Sede sedesdir : sedes){
+                        if (sedesdir.direccion.equalsIgnoreCase(dirBuscar)){
+                            comprobante = true;
+                            System.out.println("Dirección: "+sedesdir.direccion);
+                            input.nextLine();
+                            String nuevaDir = input.nextLine();
+                            System.out.println("Nombre: "+sedesdir.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Ciudad: "+sedesdir.ciudad);
+                            String nuevaCiudad = input.nextLine();
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevaDir.isEmpty()){
+                                    sedesdir.direccion = nuevaDir;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    sedesdir.nombre = nuevoNombre;
+                                }
+                                if (!nuevaCiudad.isEmpty()){
+                                    sedesdir.ciudad = nuevaCiudad;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                                break;
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                                break;
+                            }
+                        }
+                    }
+                    if (comprobante == false){
+                        System.out.println("---No se encontró ninguna sede con esta dirección---");
+                    }
+                }else{
+                    System.out.println("Ingrese 1-> Dirección");
+                }
+
             }else if(option.equals("4")){
-                //
+                System.out.println("-------       Eliminar Sedes       -------");
+                System.out.println("1. Seleccionar por Dirección");
+                String opcioneliminar = input.next();
+                if (opcioneliminar.equals("1")) {
+                    input.nextLine();
+                    String dirEliminar = input.nextLine();
+                    boolean comprobar = false;
+                    for (Sede sedeeliminar : sedes){
+                        if (sedeeliminar.direccion.equalsIgnoreCase(dirEliminar)){
+                            comprobar = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                sedes.remove(sedeeliminar);
+                                System.out.println("---La sede ha sido eliminada---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación de la sede.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (comprobar == false){
+                        System.out.println("---No se encontró ninguna sede con esta dirección---");
+                    }
+                }
             }else if(option.equals("5")){
                 break;
             }
@@ -539,7 +621,70 @@ public class Sistema {
                 zonas.add(nuevaZona);
                 System.out.println("---Las zonas se registraron correctamente---");
             }else if(option.equals("3")){
-                System.out.println();
+                System.out.println("-------       Editar Gimnasio       -------");
+                System.out.println("1. Seleccionar por NIT");
+                System.out.println("2. Seleccionar por Siglas");
+                String seleccion = input.next();
+                if (seleccion.equals("1")) {
+                    System.out.println("---Seleccionar por NIT---");
+                    System.out.println("-   Ingrese el NIT: ");
+                    String nitString = input.next();
+                    String nitReplace = nitString.replace(".", "");
+                    int intNIT = Integer.parseInt(nitReplace);
+                    boolean comprobante = false;
+                    for (Gimnasios gyms : gimnasios) {
+                        if (gyms.nit == intNIT) {
+                            comprobante = true;
+                            System.out.println("NIT: " + gyms.nit);
+                            input.nextLine();
+                            String nuevoNIT = input.nextLine();
+                            String lastNIT = nuevoNIT.replace(".", "");
+                            System.out.println("Nombre: " + gyms.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Siglas: " + gyms.siglas);
+                            String nuevaSigla = input.nextLine();
+                            System.out.println("Dirección: " + gyms.direccion);
+                            String nuevaDir = input.nextLine();
+                            System.out.println("Telefono: " + gyms.telefono);
+                            String nuevoTel = input.nextLine();
+                            String nTel = nuevoTel.replace(" ", "");
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if (opcionGuardar.equals("Y")) {
+                                if (!nuevoNIT.isEmpty()) {
+                                    int intLastNIT = Integer.parseInt(lastNIT);
+                                    gyms.nit = intLastNIT;
+                                }
+                                if (!nuevoNombre.isEmpty()) {
+                                    gyms.nombre = nuevoNombre;
+                                }
+                                if (!nuevaSigla.isEmpty()) {
+                                    gyms.siglas = nuevaSigla;
+                                }
+                                if (!nuevaDir.isEmpty()) {
+                                    gyms.direccion = nuevaDir;
+                                }
+                                if (!nuevoTel.isEmpty()) {
+                                    int intTel = Integer.parseInt(nTel);
+                                    gyms.telefono = intTel;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                                break;
+                            } else if (opcionGuardar.equals("N")) {
+                                System.out.println("---Guardado cancelado.---");
+                                break;
+                            } else {
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (comprobante == false) {
+                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
+                    }
+                }
             }else if(option.equals("4")){
                 //
             }else if(option.equals("5")){
@@ -733,8 +878,7 @@ public class Sistema {
                     System.out.println("3. Siglas");
                     System.out.println("4. Direccion");
                     System.out.println("5. Telefono");
-                    System.out.println("6. Mostrar todos los gimnasios");
-                    System.out.println("7. Volver");
+                    System.out.println("6. Volver");
                     System.out.println("--------------------------------------------------- ----");
                     System.out.println();
                     seleccion = input.next();
@@ -980,12 +1124,7 @@ public class Sistema {
                                 break;
                             }
                         }
-                    } else if (seleccion.equals("6")){
-                        for (Gimnasios gimnasio : gimnasios) {
-                            System.out.println(gimnasio);
-                        }
-                    }
-                    else if (seleccion.equals("7")) {
+                    } else if (seleccion.equals("6")) {
                         break;
                     }
                 }
@@ -1002,8 +1141,7 @@ public class Sistema {
                     System.out.println("1. Nombre");
                     System.out.println("2. Direccion");
                     System.out.println("3. Ciudad");
-                    System.out.println("4. Mostrar todas las sedes");
-                    System.out.println("5. volver");
+                    System.out.println("4. volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1140,13 +1278,6 @@ public class Sistema {
                                 break;
                             }
                         }
-                    }else if (seleccion.equals("4")){
-                        for (Sede sede : sedes) {
-                            System.out.println(sede);
-
-                        }
-                    }else if (seleccion.equals("5")){
-                        break;
                     }
                 }
             } else if (option.equals("3")) {
@@ -1164,8 +1295,7 @@ public class Sistema {
                     System.out.println("3. Zona 3");
                     System.out.println("4. Zona 4");
                     System.out.println("5. Zona 5");
-                    System.out.println("6. Mostrar todas las zonas");
-                    System.out.println("7. Volver");
+                    System.out.println("6. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1390,11 +1520,6 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
-                        for (Zona zona : zonas) {
-                            System.out.println(zona);
-                        }
-                    }
-                    else if (seleccion.equals("7")) {
                         break;
                     }
                 }
@@ -1411,8 +1536,7 @@ public class Sistema {
                     System.out.println("1. Nombre");
                     System.out.println("2. Codigo");
                     System.out.println("3. Intensidad horaria");
-                    System.out.println("4. Mostrar todos los cursos");
-                    System.out.println("5. Volver");
+                    System.out.println("4. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1569,11 +1693,6 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("4")) {
-                        for (Cursos curso : cursos) {
-                            System.out.println(curso);
-                        }
-                    }
-                    else if (seleccion.equals("5")) {
                         break;
                     }
                 }
@@ -1591,8 +1710,7 @@ public class Sistema {
                     System.out.println("2. Nombre");
                     System.out.println("3. Apellido");
                     System.out.println("4. Correo");
-                    System.out.println("5. Mostrar todos los usuarios");
-                    System.out.println("6. Volver");
+                    System.out.println("5. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1784,12 +1902,8 @@ public class Sistema {
                                 break;
                             }
                         }
-                    }else if (seleccion.equals("5")) {
-                        for (Usuario usuario : usuarios) {
-                            System.out.println(usuario);
-                        }
                     }
-                    else if (seleccion.equals("6")) {
+                    else if (seleccion.equals("5")) {
                         break;
                     }
                 }
@@ -1807,8 +1921,7 @@ public class Sistema {
                     System.out.println("2. Nombre");
                     System.out.println("3. Apellido");
                     System.out.println("4. Correo");
-                    System.out.println("5. Mostrar todos los entrenadores");
-                    System.out.println("6. Volver");
+                    System.out.println("5. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2000,12 +2113,8 @@ public class Sistema {
                                 break;
                             }
                         }
-                    } else if (seleccion.equals("5")) {
-                        for (Entrenadores entrenadore : entrenadores) {
-                            System.out.println(entrenadore);
-                        }
                     }
-                    else if (seleccion.equals("6")) {
+                    else if (seleccion.equals("5")) {
                         break;
                     }
                 }
@@ -2024,8 +2133,7 @@ public class Sistema {
                     System.out.println("3. Rutina 3");
                     System.out.println("4. Rutina 4");
                     System.out.println("5. Rutina 5");
-                    System.out.println("6. Mostrar todas las rutinas");
-                    System.out.println("7. Volver");
+                    System.out.println("6. Volver");
                     System.out.println("------------------------------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2250,11 +2358,6 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
-                        for (Rutinas rutina : rutinas) {
-                            System.out.println(rutina);
-                        }
-                    }
-                    else if (seleccion.equals("7")) {
                         break;
                     }
                 }
