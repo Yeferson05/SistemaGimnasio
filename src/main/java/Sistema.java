@@ -17,14 +17,14 @@ public class Sistema {
         String option;
         while(true){
             System.out.println();
-            System.out.println("-----------------------------");
+            System.out.println("-------      Menú principal del sistema       -------");
             System.out.println("Bienvenido al sistema del Gimnasio");
-            System.out.println("escoja una opcion");
+            System.out.println("Escoja una opcion");
             System.out.println("1. Ingresar");
             System.out.println("2. Registrarse ");
             System.out.println("3. solo para visualizar los users(momentanea) ");
             System.out.println("0. salir");
-            System.out.println("-----------------------------");
+            System.out.println("------------------------------------------------------");
             System.out.println();
             option=input.next();
             if(option.equals("1")){
@@ -274,16 +274,117 @@ public class Sistema {
                 System.out.println("2. Seleccionar por Siglas");
                 String seleccion = input.next();
                 if (seleccion.equals("1")){
+                    System.out.println("---Seleccionar por NIT---");
                     System.out.println("-   Ingrese el NIT: ");
                     String nitString = input.next();
                     String nitReplace = nitString.replace(".","");
                     int intNIT = Integer.parseInt(nitReplace);
+                    boolean comprobante = false;
                     for (Gimnasios gyms : gimnasios){
                         if (gyms.nit == intNIT){
-                            System.out.println("NIT: " + gyms.nit);
-                            String nuevoNIT = input.next();
+                            comprobante = true;
+                            System.out.println("NIT: "+gyms.nit);
+                            input.nextLine();
+                            String nuevoNIT = input.nextLine();
+                            String lastNIT = nuevoNIT.replace(".","");
+                            System.out.println("Nombre: "+gyms.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Siglas: "+gyms.siglas);
+                            String nuevaSigla = input.nextLine();
+                            System.out.println("Dirección: "+gyms.direccion);
+                            String nuevaDir = input.nextLine();
+                            System.out.println("Telefono: "+gyms.telefono);
+                            String nuevoTel = input.nextLine();
+                            String nTel = nuevoTel.replace(" ","");
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevoNIT.isEmpty()){
+                                    int intLastNIT = Integer.parseInt(lastNIT);
+                                    gyms.nit = intLastNIT;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    gyms.nombre = nuevoNombre;
+                                }
+                                if (!nuevaSigla.isEmpty()){
+                                    gyms.siglas = nuevaSigla;
+                                }
+                                if (!nuevaDir.isEmpty()){
+                                    gyms.direccion = nuevaDir;
+                                }
+                                if (!nuevoTel.isEmpty()){
+                                    int intTel = Integer.parseInt(nTel);
+                                    gyms.telefono = intTel;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (comprobante == false){
+                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
+                    }
+                }else if (seleccion.equals("2")){
+                    System.out.println("---Seleccionar por Siglas---");
+                    System.out.println("-   Ingrese las Siglas: ");
+                    String Siglas =  input.next();
+                    boolean comprobante = false;
+                    for (Gimnasios gymsigla : gimnasios){
+                        if (gymsigla.siglas.equals(Siglas)){
+                            comprobante = true;
+                            System.out.println("Siglas: "+gymsigla.siglas);
+                            input.nextLine();
+                            String nuevaSigla = input.nextLine();
+                            System.out.println("NIT: "+gymsigla.nit);
+                            String nuevoNIT = input.nextLine();
+                            String lastNIT = nuevoNIT.replace(".","");
+                            System.out.println("Nombre: "+gymsigla.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Dirección: "+gymsigla.direccion);
+                            String nuevaDir = input.nextLine();
+                            System.out.println("Telefono: "+gymsigla.telefono);
+                            String nuevoTel = input.nextLine();
+                            String nTel = nuevoTel.replace(" ","");
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevoNIT.isEmpty()){
+                                    int intLastNIT = Integer.parseInt(lastNIT);
+                                    gymsigla.nit = intLastNIT;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    gymsigla.nombre = nuevoNombre;
+                                }
+                                if (!nuevaSigla.isEmpty()){
+                                    gymsigla.siglas = nuevaSigla;
+                                }
+                                if (!nuevaDir.isEmpty()){
+                                    gymsigla.direccion = nuevaDir;
+                                }
+                                if (!nuevoTel.isEmpty()){
+                                    int intTel = Integer.parseInt(nTel);
+                                    gymsigla.telefono = intTel;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                            }
 
                         }
+                    }
+                    if (comprobante == false){
+                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
                     }
                 }
 
