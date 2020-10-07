@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sistema {
+    public static int idActual = 1;
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<Usuario> usuarios= new ArrayList<>();
     public static ArrayList<Gimnasios> gimnasios= new ArrayList<>();
@@ -14,6 +15,8 @@ public class Sistema {
     public static void main(String[] args) {
         Gimnasios nuevoGym1=new Gimnasios(123,"bodytech","bdt","avenida siempre viva",321);
         gimnasios.add(nuevoGym1);
+        Rutinas nuevoRut1=new Rutinas("pecho","brazo","cardio","espalda","resistencia",90);
+        rutinas.add(nuevoRut1);
         String option;
         while(true){
             System.out.println();
@@ -727,117 +730,96 @@ public class Sistema {
                 String rutina4=input.next();
                 System.out.println("-   Ingrese el nombre de la rutina 5");
                 String rutina5=input.next();
-                Rutinas nuevaRutina = new Rutinas(rutina1,rutina2,rutina3,rutina4,rutina5);
+                Rutinas nuevaRutina = new Rutinas(rutina1,rutina2,rutina3,rutina4,rutina5,idActual);
+                idActual++;
                 rutinas.add(nuevaRutina);
                 System.out.println("---Las rutinas se registraron correctamente---");
             }else if(option.equals("3")){
                 System.out.println("-------       Editar Rutina       -------");
-                    System.out.println("-   Ingrese el nombre de la rutina: ");
-                    String nomRutina = input.next();
-                    boolean comprobante = false;
-                    for (Rutinas rutina : rutinas){
-                        if (rutina.rutina1.equals(nomRutina)){
-                            comprobante = true;
-                            System.out.println("Nombre: "+rutina.rutina1);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if(opcionGuardar.equals("Y")){
-                                if (!nuevoNombre.isEmpty()){
-                                    rutina.rutina1 = nuevoNombre;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                            }else if (opcionGuardar.equals("N")){
-                                System.out.println("---Guardado cancelado.---");
-                            }else{
-                                System.out.println("---Ingresa Y o N---");
+                System.out.println("-   Ingrese el ID de la lista de las rutinas: ");
+                String idString = input.next();
+                String idReplace = idString.replace(".", "");
+                int intID = Integer.parseInt(idReplace);
+                boolean comprobante = false;
+                for (Rutinas rutina : rutinas) {
+                    if (rutina.id == intID) {
+                        comprobante = true;
+                        System.out.println("ID: " + rutina.id);
+                        input.nextLine();
+                        String nuevoID = input.nextLine();
+                        String lastID = nuevoID.replace(".", "");
+                        System.out.println("Rutina 1: " + rutina.rutina1);
+                        String nuevoNombre1 = input.nextLine();
+                        System.out.println("Rutina 2: " + rutina.rutina2);
+                        String nuevoNombre2 = input.nextLine();
+                        System.out.println("Rutina 3: " + rutina.rutina3);
+                        String nuevoNombre3 = input.nextLine();
+                        System.out.println("Rutina 4: " + rutina.rutina4);
+                        String nuevoNombre4 = input.nextLine();
+                        System.out.println("Rutina 5: " + rutina.rutina5);
+                        String nuevoNombre5 = input.nextLine();
+                        System.out.println("---¿Desea guardar los cambios?---");
+                        System.out.println("---Ingrese Y o N según el caso.---");
+                        System.out.println("Y -> Confirmar");
+                        System.out.println("N -> Cancelar");
+                        String opcionGuardar = input.next();
+                        if (opcionGuardar.equals("Y")) {
+                            if (!nuevoID.isEmpty()) {
+                                int intLastID = Integer.parseInt(lastID);
+                                rutina.id = intLastID;
                             }
-                        }else if (rutina.rutina2.equals(nomRutina)){
-                            comprobante = true;
-                            System.out.println("Nombre: "+rutina.rutina2);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if(opcionGuardar.equals("Y")){
-                                if (!nuevoNombre.isEmpty()){
-                                    rutina.rutina2 = nuevoNombre;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                            }else if (opcionGuardar.equals("N")){
-                                System.out.println("---Guardado cancelado.---");
-                            }else{
-                                System.out.println("---Ingresa Y o N---");
+                            if (!nuevoNombre1.isEmpty()) {
+                                rutina.rutina1 = nuevoNombre1;
+                            }if (!nuevoNombre2.isEmpty()) {
+                                rutina.rutina2 = nuevoNombre2;
+                            }if (!nuevoNombre3.isEmpty()) {
+                                rutina.rutina3 = nuevoNombre3;
+                            }if (!nuevoNombre4.isEmpty()) {
+                                rutina.rutina4 = nuevoNombre4;
+                            }if (!nuevoNombre5.isEmpty()) {
+                                rutina.rutina5 = nuevoNombre5;
                             }
-                        }else if (rutina.rutina3.equals(nomRutina)){
-                            comprobante = true;
-                            System.out.println("Nombre: "+rutina.rutina3);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if(opcionGuardar.equals("Y")){
-                                if (!nuevoNombre.isEmpty()){
-                                    rutina.rutina3 = nuevoNombre;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                            }else if (opcionGuardar.equals("N")){
-                                System.out.println("---Guardado cancelado.---");
-                            }else{
-                                System.out.println("---Ingresa Y o N---");
-                            }
-                        }else if (rutina.rutina4.equals(nomRutina)){
-                            comprobante = true;
-                            System.out.println("Nombre: "+rutina.rutina4);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if(opcionGuardar.equals("Y")){
-                                if (!nuevoNombre.isEmpty()){
-                                    rutina.rutina4 = nuevoNombre;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                            }else if (opcionGuardar.equals("N")){
-                                System.out.println("---Guardado cancelado.---");
-                            }else{
-                                System.out.println("---Ingresa Y o N---");
-                            }
-                        }else if (rutina.rutina5.equals(nomRutina)){
-                            comprobante = true;
-                            System.out.println("Nombre: "+rutina.rutina5);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if(opcionGuardar.equals("Y")){
-                                if (!nuevoNombre.isEmpty()){
-                                    rutina.rutina5 = nuevoNombre;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                            }else if (opcionGuardar.equals("N")){
-                                System.out.println("---Guardado cancelado.---");
-                            }else{
-                                System.out.println("---Ingresa Y o N---");
-                            }
+                            System.out.println("---Guardado exitoso.---");
+                            break;
+                        } else if (opcionGuardar.equals("N")) {
+                            System.out.println("---Guardado cancelado.---");
+                            break;
+                        } else {
+                            System.out.println("---Ingresa Y o N---");
                         }
                     }
-                    if (!comprobante){
-                        System.out.println("---No se encontró ningúna Rutina con ese nombre---");
-                    }
+                }
+                if (!comprobante){
+                    System.out.println("---No se encontró ningúna lista de Rutina con ese ID---");
+                }
             }else if(option.equals("4")){
-                //
+                System.out.println("-   Ingrese el ID de la lista de rutinas: ");
+                String idEliminar = input.next();
+                String idEdit = idEliminar.replace(".","");
+                int idEntero = Integer.parseInt(idEdit);
+                boolean comprobar = false;
+                for (Rutinas listeliminar : rutinas){
+                    if (listeliminar.id == idEntero){
+                        comprobar = true;
+                        System.out.println("¿Está seguro que desea eliminar el elemento?");
+                        System.out.println("Y -> Confirmar");
+                        System.out.println("N -> Cancelar");
+                        String yesornot = input.next();
+                        if (yesornot.equals("Y")){
+                            rutinas.remove(listeliminar);
+                            System.out.println("---La lista de Rutinas ha sido eliminada.---");
+                            break;
+                        }else if (yesornot.equals("N")){
+                            System.out.println("---Se ha cancelado la eliminación de la lista de Rutinas.---");
+                            break;
+                        }else{
+                            System.out.println("---Ingrese Y o N según el caso---");
+                        }
+                    }
+                }
+                if (!comprobar){
+                    System.out.println("---No se encontró ningúna lista de rutinas con este ID---");
+                }
             }else if(option.equals("5")){
                 break;
             }
@@ -1097,11 +1079,216 @@ public class Sistema {
                 System.out.println("---Lista de usuarios---");
                 visualizar();
             }else if(option.equals("2")){
-                registrarse();
+                System.out.println("-                   Registro                        -");
+                System.out.println("-   Ingrese su documento de identidad: ");
+                int documento = input.nextInt();
+                if (documento < 0) {
+                    System.out.println("---El documento ingresado es invalido.---");
+                    return;
+                }
+                for (Usuario usuario : usuarios) {
+                    if (usuario.cedula == documento) {
+                        System.out.println("---El usuario ingresado ya existe.---");
+                        return;
+                    }
+                }
+                System.out.println("-   Ingrese su nombre: ");
+                String nombre=input.next();
+                System.out.println("-   Ingrese su apellido: ");
+                String apellido=input.next();
+                System.out.println("-   Ingrese su dirección de correo electronico completo.");
+                String correo=input.next();
+                for (Usuario usuario : usuarios) {
+                    if (usuario.correo.equals(correo)) {
+                        System.out.println("---El correo electronico ingresado ya existe.---");
+                        return;
+                    }
+                }
+                if (!(correo.contains("@"))){
+                    System.out.println("---El correo ingresado es invalido.---");
+                    return;
+                }
+                System.out.println("-   Ingrese la contraseña:");
+                String contra=input.next();
+                input.nextLine();
+                Usuario nuevoUsuario = new Usuario(documento,nombre,apellido,correo,contra);
+                usuarios.add(nuevoUsuario);
+                System.out.println("---¡Registro exitoso!---");
             }else if(option.equals("3")){
-                System.out.println();
+                System.out.println("-------       Editar Usuario       -------");
+                System.out.println("1. Seleccionar por documento");
+                System.out.println("2. Seleccionar por correo");
+                String seleccion = input.next();
+                if (seleccion.equals("1")){
+                    System.out.println("---Seleccionar por documento---");
+                    System.out.println("-   Ingrese el documento: ");
+                    String docString = input.next();
+                    String docReplace = docString.replace(".","");
+                    int intDOC = Integer.parseInt(docReplace);
+                    boolean comprobante = false;
+                    for (Usuario usuario : usuarios){
+                        if (usuario.cedula == intDOC){
+                            comprobante = true;
+                            System.out.println("documento: "+usuario.cedula);
+                            input.nextLine();
+                            String nuevoDOC = input.nextLine();
+                            String lastDOC = nuevoDOC.replace(".","");
+                            System.out.println("Nombre: "+usuario.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Apellido: "+usuario.apellido);
+                            String nuevoApellido = input.nextLine();
+                            System.out.println("Correo: "+usuario.correo);
+                            String nuevoCorr=input.next();
+                            System.out.println("Contraseña: "+usuario.password);
+                            String nuevacontra=input.next();
+                            input.nextLine();
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevoDOC.isEmpty()){
+                                    int intLastDOC = Integer.parseInt(lastDOC);
+                                    usuario.cedula = intLastDOC;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    usuario.nombre = nuevoNombre;
+                                }
+                                if (!nuevoApellido.isEmpty()){
+                                    usuario.apellido = nuevoApellido;
+                                }if (!nuevoCorr.isEmpty()){
+                                    usuario.correo = nuevoCorr;
+                                }
+                                if (!nuevacontra.isEmpty()){
+                                    usuario.password = nuevacontra;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (!comprobante){
+                        System.out.println("---No se encontró ningún Usuario con este documento---");
+                    }
+                }else if (seleccion.equals("2")) {
+                    System.out.println("---Seleccionar por correo---");
+                    System.out.println("-   Ingrese el correo: ");
+                    String corrString = input.next();
+                    boolean comprobante = false;
+                    for (Usuario usuario : usuarios) {
+                        if (usuario.correo.equals(corrString)) {
+                            comprobante = true;
+                            System.out.println("documento: " + usuario.cedula);
+                            input.nextLine();
+                            String nuevoDOC = input.nextLine();
+                            String lastDOC = nuevoDOC.replace(".", "");
+                            System.out.println("Nombre: " + usuario.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Apellido: " + usuario.apellido);
+                            String nuevoApellido = input.nextLine();
+                            System.out.println("Correo: " + usuario.correo);
+                            String nuevoCorr = input.nextLine();
+                            System.out.println("Contraseña: "+usuario.password);
+                            String nuevacontra=input.next();
+                            input.nextLine();
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if (opcionGuardar.equals("Y")) {
+                                if (!nuevoDOC.isEmpty()) {
+                                    int intLastDOC = Integer.parseInt(lastDOC);
+                                    usuario.cedula = intLastDOC;
+                                }
+                                if (!nuevoNombre.isEmpty()) {
+                                    usuario.nombre = nuevoNombre;
+                                }
+                                if (!nuevoApellido.isEmpty()) {
+                                    usuario.apellido = nuevoApellido;
+                                }
+                                if (!nuevoCorr.isEmpty()){
+                                    usuario.correo = nuevoCorr;
+                                }
+                                if (!nuevacontra.isEmpty()) {
+                                    usuario.password = nuevacontra;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                            } else if (opcionGuardar.equals("N")) {
+                                System.out.println("---Guardado cancelado.---");
+                            } else {
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (!comprobante) {
+                        System.out.println("---No se encontró ningún Usuario con este correo---");
+                    }
+                }
             }else if(option.equals("4")){
-                //
+                System.out.println("-------       Eliminar Usuario       -------");
+                System.out.println("1. Seleccionar por documento");
+                System.out.println("2. Seleccionar por correo");
+                String opcioneliminar = input.next();
+                if (opcioneliminar.equals("1")){
+                    System.out.println("-   Ingrese el documento: ");
+                    String DocEliminar = input.next();
+                    String docEdit = DocEliminar.replace(".","");
+                    int docEntero = Integer.parseInt(docEdit);
+                    boolean comprobar = false;
+                    for (Usuario doceliminar : usuarios){
+                        if (doceliminar.cedula == docEntero){
+                            comprobar = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                usuarios.remove(doceliminar);
+                                System.out.println("---El Usuario ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del Usuario.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (!comprobar){
+                        System.out.println("---No se encontró ningún Usuario con este documento---");
+                    }
+                }else if(opcioneliminar.equals("2")){
+                    System.out.println("-   Ingrese el correo: ");
+                    String CorreoEliminar = input.next();
+                    boolean check = false;
+                    for (Usuario Corrreodel :  usuarios){
+                        if (Corrreodel.correo.equals(CorreoEliminar)){
+                            check = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                usuarios.remove(Corrreodel);
+                                System.out.println("---El Usuario ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del Usuario.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (!check){
+                        System.out.println("---No se encontró ningún Usuario con este correo---");
+                    }
+                }
             }else if(option.equals("5")){
                 break;
             }
