@@ -2868,7 +2868,7 @@ public class Sistema {
         Entrenadores entrenador3 = new Entrenadores(3,"","","");
         entrenadores.add(entrenador3);
 
-        Rutinas rutina1 = new Rutinas("","","","","",1);
+        Rutinas rutina1 = new Rutinas("pecho","brazo","cardio","espealda","recistencia",90);
         rutinas.add(rutina1);
         Rutinas rutina2 = new Rutinas("","","","","",2);
         rutinas.add(rutina2);
