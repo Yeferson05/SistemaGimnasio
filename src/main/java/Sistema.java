@@ -2820,6 +2820,111 @@ public class Sistema {
 
     public static void diagnostico() {
 
+        Gimnasios gimnasio1 = new Gimnasios(1,"", "","",234);
+        gimnasios.add(gimnasio1);
+        Gimnasios gimnasio2 = new Gimnasios(2,"","","",235);
+        gimnasios.add(gimnasio2);
+        Gimnasios gimnasio3 = new Gimnasios(3,"","","",236);
+        gimnasios.add(gimnasio3);
+
+        Sede sede1 = new Sede("","","");
+        sedes.add(sede1);
+        Sede sede2 = new Sede("","","");
+        sedes.add(sede2);
+        Sede sede3 = new Sede("","","");
+        sedes.add(sede3);
+        Sede sede4 = new Sede("","","");
+        sedes.add(sede4);
+
+        Cursos curso1 = new Cursos("",1,2);
+        cursos.add(curso1);
+        Cursos curso2 = new Cursos("",2,3);
+        cursos.add(curso2);
+        Cursos curso3 = new Cursos("",3,4);
+        cursos.add(curso3);
+        Cursos curso4 = new Cursos("",4,4);
+        cursos.add(curso4);
+
+        Usuario usuario1 = new Usuario(1,"","","","");
+        usuarios.add(usuario1);
+        Usuario usuario2 = new Usuario(2,"","","","");
+        usuarios.add(usuario2);
+        Usuario usuario3 = new Usuario(3,"","","","");
+        usuarios.add(usuario3);
+
+        Zona zonas1 = new Zona("","","","","");
+        zonas.add(zonas1);
+        Zona zonas2 = new Zona("","","","","");
+        zonas.add(zonas2);
+        Zona zonas3 = new Zona("","","","","");
+        zonas.add(zonas3);
+        Zona zonas4 = new Zona("","","","","");
+        zonas.add(zonas4);
+
+        Entrenadores entrenador1 = new Entrenadores(1,"","","");
+        entrenadores.add(entrenador1);
+        Entrenadores entrenador2 = new Entrenadores(2,"","","");
+        entrenadores.add(entrenador2);
+        Entrenadores entrenador3 = new Entrenadores(3,"","","");
+        entrenadores.add(entrenador3);
+
+        Rutinas rutina1 = new Rutinas("","","","","",1);
+        rutinas.add(rutina1);
+        Rutinas rutina2 = new Rutinas("","","","","",2);
+        rutinas.add(rutina2);
+        Rutinas rutina3 = new Rutinas("","","","","",3);
+        rutinas.add(rutina3);
+        Rutinas rutina4 = new Rutinas("","","","","",4);
+        rutinas.add(rutina4);
+
+        inconcistencias();
+    }
+    public static void inconcistencias(){
+
+        System.out.println("Gimnasio inconcistente en el sistema");
+        for(Gimnasios gimnasio : gimnasios){
+            if(gimnasio.misSedes.size() == 0 || gimnasio.misCursos.size() == 0 || gimnasio.misZonas.size() == 0 || gimnasio.misEntrenadores.size() == 0 ||
+            gimnasio.misRutinas.size() == 0){
+                System.out.println(gimnasio);
+            }
+            System.out.println();
+        }
+        System.out.println("Sedes inconcistentes en el sistema");
+        for(Sede sede: sedes){
+            if(sede.gimnasio == null || sede.misCursos.size() == 0 || sede.misZonas.size() == 0 || sede.misEntrenadores.size() == 0 ||
+                    sede.misRutinas.size() == 0){
+                     System.out.println(sede);
+            }
+            System.out.println();
+        }
+        System.out.println("Cursos inconcistente en el sistema");
+        for(Cursos curso : cursos){
+            if(curso.misZonas.size() == 0 || curso.misEntrenadores.size() == 0 || curso.misRutinas.size() == 0){
+                System.out.println(curso);
+            }
+            System.out.println();
+        }
+        System.out.println("Usuarios inconcistente en el sistema");
+        for(Usuario usuario :usuarios){
+            if(usuario.misEntrenadores.size() == 0){
+                System.out.println(usuario);
+            }
+            System.out.println();
+        }
+        System.out.println("Zonas inconcistente en el sistema");
+        for(Zona zona : zonas){
+            if(zona.misEntrenadores.size() == 0 || zona.misRutinas.size() == 0 ){
+                System.out.println(zona);
+            }
+            System.out.println();
+        }
+        System.out.println("Entrenadores inconcistente en el sistema");
+        for(Entrenadores entrenador : entrenadores){
+            if(entrenador.misRutinas.size() == 0){
+                System.out.println(entrenador);
+            }
+            System.out.println();
+        }
     }
 
     public static void guardar() {

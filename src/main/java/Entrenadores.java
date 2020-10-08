@@ -1,4 +1,10 @@
+import java.util.ArrayList;
+
 public class Entrenadores {
+
+
+    public ArrayList<Rutinas> misRutinas = new ArrayList<>();
+
     public int documento;
     public String nombre;
     public String apellido;
@@ -10,15 +16,19 @@ public class Entrenadores {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correoo;
+
+        misRutinas = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "User " + "\n" +
-                "\t cedula : " + documento + "\n" +
-                "\t nombre : " + nombre + "\n" +
-                "\t apellido : " + apellido + "\n" +
-                "\t correo : " + correo + "\n" +
-                "\t ";
+        return "Entrenadores{" +
+                "misRutinas=" + misRutinas +
+                ", documento=" + documento +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correo='" + correo + '\'' +
+                '}';
     }
+
 }
