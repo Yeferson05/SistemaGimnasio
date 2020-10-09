@@ -1329,7 +1329,8 @@ public class Sistema {
                     System.out.println("3. Siglas");
                     System.out.println("4. Direccion");
                     System.out.println("5. Telefono");
-                    System.out.println("6. Volver");
+                    System.out.println("6. Mostrar todos los gimnasios");
+                    System.out.println("7. Volver");
                     System.out.println("--------------------------------------------------- ----");
                     System.out.println();
                     seleccion = input.next();
@@ -1576,6 +1577,11 @@ public class Sistema {
                             }
                         }
                     } else if (seleccion.equals("6")) {
+                        for (Gimnasios gimnasio : gimnasios) {
+                            System.out.println(gimnasio);
+                        }
+                    }
+                    else if (seleccion.equals("7")) {
                         break;
                     }
                 }
@@ -1592,7 +1598,8 @@ public class Sistema {
                     System.out.println("1. Nombre");
                     System.out.println("2. Direccion");
                     System.out.println("3. Ciudad");
-                    System.out.println("4. volver");
+                    System.out.println("4. Mostrar todas las sedes");
+                    System.out.println("5. volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1729,6 +1736,13 @@ public class Sistema {
                                 break;
                             }
                         }
+                    }else if (seleccion.equals("4")) {
+                        for (Sede sede : sedes) {
+                            System.out.println(sede);
+                        }
+                    }
+                    else if (seleccion.equals("5")) {
+                        break;
                     }
                 }
             } else if (option.equals("3")) {
@@ -1746,7 +1760,8 @@ public class Sistema {
                     System.out.println("3. Zona 3");
                     System.out.println("4. Zona 4");
                     System.out.println("5. Zona 5");
-                    System.out.println("6. Volver");
+                    System.out.println("6. Mostrar todas las zonas");
+                    System.out.println("7. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -1971,6 +1986,11 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
+                        for (Zona zona : zonas) {
+                            System.out.println(zona);
+                        }
+                    }
+                    else if (seleccion.equals("7")) {
                         break;
                     }
                 }
@@ -1987,7 +2007,8 @@ public class Sistema {
                     System.out.println("1. Nombre");
                     System.out.println("2. Codigo");
                     System.out.println("3. Intensidad horaria");
-                    System.out.println("4. Volver");
+                    System.out.println("4. Mostrar todos los cursos");
+                    System.out.println("5. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2144,6 +2165,11 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("4")) {
+                        for (Cursos curso : cursos) {
+                            System.out.println(curso);
+                        }
+                    }
+                    else if (seleccion.equals("5")) {
                         break;
                     }
                 }
@@ -2161,7 +2187,8 @@ public class Sistema {
                     System.out.println("2. Nombre");
                     System.out.println("3. Apellido");
                     System.out.println("4. Correo");
-                    System.out.println("5. Volver");
+                    System.out.println("5. Mostrar todos los usuarios");
+                    System.out.println("6. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2353,8 +2380,12 @@ public class Sistema {
                                 break;
                             }
                         }
+                    }else if (seleccion.equals("5")) {
+                        for (Usuario usuario : usuarios) {
+                            System.out.println(usuario);
+                        }
                     }
-                    else if (seleccion.equals("5")) {
+                    else if (seleccion.equals("6")) {
                         break;
                     }
                 }
@@ -2372,7 +2403,8 @@ public class Sistema {
                     System.out.println("2. Nombre");
                     System.out.println("3. Apellido");
                     System.out.println("4. Correo");
-                    System.out.println("5. Volver");
+                    System.out.println("5. Mostrar todos los entrenadores");
+                    System.out.println("6. Volver");
                     System.out.println("-----------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2564,8 +2596,12 @@ public class Sistema {
                                 break;
                             }
                         }
+                    }else if (seleccion.equals("5")) {
+                        for (Entrenadores entrenadore : entrenadores) {
+                            System.out.println(entrenadore);
+                        }
                     }
-                    else if (seleccion.equals("5")) {
+                    else if (seleccion.equals("6")) {
                         break;
                     }
                 }
@@ -2584,7 +2620,8 @@ public class Sistema {
                     System.out.println("3. Rutina 3");
                     System.out.println("4. Rutina 4");
                     System.out.println("5. Rutina 5");
-                    System.out.println("6. Volver");
+                    System.out.println("6. Mostrar todas las rutinas");
+                    System.out.println("7. Volver");
                     System.out.println("------------------------------------------------");
                     System.out.println();
                     seleccion = input.next();
@@ -2809,6 +2846,11 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
+                        for (Rutinas rutina : rutinas) {
+                            System.out.println(rutina);
+                        }
+                    }
+                    else if (seleccion.equals("7")) {
                         break;
                     }
                 }
