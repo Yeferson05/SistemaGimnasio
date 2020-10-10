@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Sistema {
@@ -1319,6 +1320,7 @@ public class Sistema {
                     System.out.println("---La lista de gimnasios se encuentra vacía---");
                     return;
                 }
+                ArrayList<Gimnasios> Compagimnasios= new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -1355,9 +1357,7 @@ public class Sistema {
                                         System.out.println(gimnasio);
                                         c++;
                                     }
-
-                                }
-                                if (c == 0) {
+                                }if (c == 0) {
                                     System.out.println("El NIT a buscar no se encuentra");
                                 }
                             } else if (option1.equals("2")) {
@@ -1366,9 +1366,18 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nit >= valorMinimo) {
-                                        System.out.println(gimnasio);
                                         c++;
+                                        Compagimnasios.add(gimnasio);
                                     }
+                                } System.out.println("Por cual dese ordenar");
+                                System.out.println("2. Nombre");
+                                System.out.println("3. Siglas");
+                                System.out.println("4. Direccion");
+                                System.out.println("5. Telefono");
+                                String compa = input.next();
+                                if (compa.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                    System.out.println(Compagimnasios);
                                 }
                                 if (c == 0) {
                                     System.out.println("---No hay NIT que mostrar---");
