@@ -21,7 +21,7 @@ public class GimnasioComparador implements Comparator<Gimnasios> {
                 }
             }
             return 0;
-        }else if (criterio.equals("2")) {
+        }else if (criterio.equals("3")) {
             int min = gmy1.siglas.length() < gmy2.siglas.length() ? gmy1.siglas.length() : gmy2.siglas.length();
             for (int i = 0; i < min; i++) {
                 if (gmy1.siglas.charAt(i) > gmy2.siglas.charAt(i)) {
@@ -31,7 +31,7 @@ public class GimnasioComparador implements Comparator<Gimnasios> {
                 }
             }
             return 0;
-        }else if (criterio.equals("3")) {
+        }else if (criterio.equals("4")) {
             int min = gmy1.direccion.length() < gmy2.direccion.length() ? gmy1.direccion.length() : gmy2.direccion.length();
             for (int i = 0; i < min; i++) {
                 if (gmy1.direccion.charAt(i) > gmy2.direccion.charAt(i)) {

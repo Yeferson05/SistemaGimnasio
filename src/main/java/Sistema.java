@@ -1321,6 +1321,7 @@ public class Sistema {
                     return;
                 }
                 ArrayList<Gimnasios> Compagimnasios= new ArrayList<>();
+                System.out.println(Compagimnasios+ "este");
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -1369,17 +1370,98 @@ public class Sistema {
                                         c++;
                                         Compagimnasios.add(gimnasio);
                                     }
-                                } System.out.println("Por cual dese ordenar");
-                                System.out.println("2. Nombre");
-                                System.out.println("3. Siglas");
-                                System.out.println("4. Direccion");
-                                System.out.println("5. Telefono");
-                                String compa = input.next();
-                                if (compa.equals("2")){
-                                    Collections.sort(Compagimnasios,new GimnasioComparador("2"));
-                                    System.out.println(Compagimnasios);
                                 }
-                                if (c == 0) {
+                                if (c!=0){
+                                    System.out.println("Por cual desea ordenar");
+                                    System.out.println("1. Nit");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Siglas");
+                                    System.out.println("4. Direccion");
+                                    System.out.println("5. Telefono");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }
+                                }
+                                else if (c == 0) {
                                     System.out.println("---No hay NIT que mostrar---");
                                 }
                             } else if (option1.equals("3")) {
@@ -1388,11 +1470,100 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nit <= valorMaximo) {
-                                        System.out.println(gimnasio);
                                         c++;
+                                        Compagimnasios.add(gimnasio);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nit");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Siglas");
+                                    System.out.println("4. Direccion");
+                                    System.out.println("5. Telefono");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay NIT que mostrar---");
                                 }
                             } else if (option1.equals("4")) {
@@ -1432,11 +1603,100 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.nombre.toLowerCase().equals(nombreMinu)) {
-                                        System.out.println(gimnasio);
                                         c++;
+                                        Compagimnasios.add(gimnasio);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nit");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Siglas");
+                                    System.out.println("4. Direccion");
+                                    System.out.println("5. Telefono");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---El nombre a buscar no fue encontrado---");
                                 }
                             }else if (option2.equals("3")) {
@@ -1561,11 +1821,100 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.telefono >= numero) {
-                                        System.out.println(gimnasio);
                                         c++;
+                                        Compagimnasios.add(gimnasio);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nit");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Siglas");
+                                    System.out.println("4. Direccion");
+                                    System.out.println("5. Telefono");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay telefonos que mostrar---");
                                 }
                             } else if (option2.equals("3")) {
@@ -1574,11 +1923,100 @@ public class Sistema {
                                 int c = 0;
                                 for (Gimnasios gimnasio : gimnasios) {
                                     if (gimnasio.telefono <= numero) {
-                                        System.out.println(gimnasio);
                                         c++;
+                                        Compagimnasios.add(gimnasio);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nit");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Siglas");
+                                    System.out.println("4. Direccion");
+                                    System.out.println("5. Telefono");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            Collections.reverse(Compagimnasios);
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                            System.out.println(Compagimnasios);
+                                            Compagimnasios.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay telefonos que mostrar---");
                                 }
                             } else if (option2.equals("4")) {
@@ -1586,8 +2024,99 @@ public class Sistema {
                             }
                         }
                     } else if (seleccion.equals("6")) {
+                        int c=0;
                         for (Gimnasios gimnasio : gimnasios) {
-                            System.out.println(gimnasio);
+                            c++;
+                            Compagimnasios.add(gimnasio);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Nit");
+                            System.out.println("2. Nombre");
+                            System.out.println("3. Siglas");
+                            System.out.println("4. Direccion");
+                            System.out.println("5. Telefono");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                    Collections.reverse(Compagimnasios);
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("1"));
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                    Collections.reverse(Compagimnasios);
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("2"));
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                    Collections.reverse(Compagimnasios);
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("3"));
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                            }else if (compa.equals("4")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                    Collections.reverse(Compagimnasios);
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("4"));
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                            }else if (compa.equals("5")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                    Collections.reverse(Compagimnasios);
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(Compagimnasios,new GimnasioComparador("5"));
+                                    System.out.println(Compagimnasios);
+                                    Compagimnasios.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("7")) {
@@ -1599,6 +2128,7 @@ public class Sistema {
                     System.out.println("---La lista de las sedes se encuentra vacía---");
                     return;
                 }
+                ArrayList<Sede> CompaSede= new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -1746,8 +2276,65 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("4")) {
+                        int c=0;
                         for (Sede sede : sedes) {
-                            System.out.println(sede);
+                            c++;
+                            CompaSede.add(sede);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Nombre");
+                            System.out.println("2. Direccion");
+                            System.out.println("3. Ciudad");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaSede,new SedeComparador("1"));
+                                    Collections.reverse(CompaSede);
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaSede,new SedeComparador("1"));
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaSede,new SedeComparador("2"));
+                                    Collections.reverse(CompaSede);
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaSede,new SedeComparador("2"));
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaSede,new SedeComparador("3"));
+                                    Collections.reverse(CompaSede);
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaSede,new SedeComparador("3"));
+                                    System.out.println(CompaSede);
+                                    CompaSede.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("5")) {
@@ -1759,6 +2346,7 @@ public class Sistema {
                     System.out.println("---La lista de zonas se encuentra vacía---");
                     return;
                 }
+                ArrayList<Zona> CompaZona =new  ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -1995,8 +2583,99 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
+                        int c=0;
                         for (Zona zona : zonas) {
-                            System.out.println(zona);
+                            c++;
+                            CompaZona.add(zona);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Zona1");
+                            System.out.println("2. Zona2");
+                            System.out.println("3. Zona3");
+                            System.out.println("4. Zona4");
+                            System.out.println("5. Zona5");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaZona,new ZonaComparador("1"));
+                                    Collections.reverse(CompaZona);
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaZona,new ZonaComparador("1"));
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaZona,new ZonaComparador("2"));
+                                    Collections.reverse(CompaZona);
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaZona,new ZonaComparador("2"));
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaZona,new ZonaComparador("3"));
+                                    Collections.reverse(CompaZona);
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaZona,new ZonaComparador("3"));
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                            }else if (compa.equals("4")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaZona,new ZonaComparador("4"));
+                                    Collections.reverse(CompaZona);
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaZona,new ZonaComparador("4"));
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                            }else if (compa.equals("5")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaZona,new ZonaComparador("5"));
+                                    Collections.reverse(CompaZona);
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaZona,new ZonaComparador("5"));
+                                    System.out.println(CompaZona);
+                                    CompaZona.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("7")) {
@@ -2008,6 +2687,7 @@ public class Sistema {
                     System.out.println("---La lista de cursos se encuentra vacía---");
                     return;
                 }
+                ArrayList<Cursos> CompaCurso = new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -2095,11 +2775,66 @@ public class Sistema {
                                 int c = 0;
                                 for (Cursos curso : cursos) {
                                     if (curso.codigo >= cidigo) {
-                                        System.out.println(curso);
                                         c++;
+                                        CompaCurso.add(curso);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nombre");
+                                    System.out.println("2. Codigo");
+                                    System.out.println("3. IntensidadHora");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay codigos que mostrar---");
                                 }
                             } else if (option2.equals("3")) {
@@ -2108,11 +2843,66 @@ public class Sistema {
                                 int c = 0;
                                 for (Cursos curso : cursos) {
                                     if (curso.codigo <= codigo) {
-                                        System.out.println(curso);
                                         c++;
+                                        CompaCurso.add(curso);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nombre");
+                                    System.out.println("2. Codigo");
+                                    System.out.println("3. IntensidadHora");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay codigos que mostrar---");
                                 }
                             } else if (option2.equals("4")) {
@@ -2149,11 +2939,66 @@ public class Sistema {
                                 int c = 0;
                                 for (Cursos curso : cursos) {
                                     if (curso.codigo >= codigo) {
-                                        System.out.println(curso);
                                         c++;
+                                        CompaCurso.add(curso);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nombre");
+                                    System.out.println("2. Codigo");
+                                    System.out.println("3. IntensidadHora");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay intensidad de hora que mostrar---");
                                 }
                             } else if (option2.equals("3")) {
@@ -2162,11 +3007,66 @@ public class Sistema {
                                 int c = 0;
                                 for (Cursos curso : cursos) {
                                     if (curso.codigo <= codigo) {
-                                        System.out.println(curso);
                                         c++;
+                                        CompaCurso.add(curso);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Nombre");
+                                    System.out.println("2. Codigo");
+                                    System.out.println("3. IntensidadHora");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("1"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("2"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            Collections.reverse(CompaCurso);
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaCurso,new CursoComparador("3"));
+                                            System.out.println(CompaCurso);
+                                            CompaCurso.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No hay intensidad de hora que mostrar---");
                                 }
                             } else if (option2.equals("4")) {
@@ -2174,8 +3074,66 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("4")) {
+                        int c=0;
                         for (Cursos curso : cursos) {
                             System.out.println(curso);
+                            c++;
+                            CompaCurso.add(curso);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Nombre");
+                            System.out.println("2. Codigo");
+                            System.out.println("3. IntensidadHora");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaCurso,new CursoComparador("1"));
+                                    Collections.reverse(CompaCurso);
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaCurso,new CursoComparador("1"));
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaCurso,new CursoComparador("2"));
+                                    Collections.reverse(CompaCurso);
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaCurso,new CursoComparador("2"));
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaCurso,new CursoComparador("3"));
+                                    Collections.reverse(CompaCurso);
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaCurso,new CursoComparador("3"));
+                                    System.out.println(CompaCurso);
+                                    CompaCurso.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("5")) {
@@ -2187,6 +3145,7 @@ public class Sistema {
                     System.out.println("---La lista de usuarios se encuentra vacía---");
                     return;
                 }
+                ArrayList<Usuario> CompaUsuario = new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -2231,11 +3190,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.cedula >= cedula) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---La cedula a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("3")) {
@@ -2244,11 +3275,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.cedula <= cedula) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---La cedula a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("4")) {
@@ -2274,11 +3377,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.nombre.equals(nombre)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro el nombre---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2289,11 +3464,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.nombre.toLowerCase().equals(nombreMInus)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro el nombre---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2318,11 +3565,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.apellido.equals(apellido)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro el apellido---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2333,11 +3652,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.apellido.toLowerCase().equals(apellidoMInus)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro el apellido---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2363,11 +3754,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.correo.equals(correo)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro el correo---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2378,11 +3841,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Usuario usuario : usuarios) {
                                     if (usuario.correo.toLowerCase().equals(correoMInus)) {
-                                        System.out.println(usuario);
                                         c++;
+                                        CompaUsuario.add(usuario);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Cedula");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            Collections.reverse(CompaUsuario);
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                            System.out.println(CompaUsuario);
+                                            CompaUsuario.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro ningun correo---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2390,8 +3925,82 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("5")) {
+                        int c=0;
                         for (Usuario usuario : usuarios) {
-                            System.out.println(usuario);
+                            c++;
+                            CompaUsuario.add(usuario);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Cedula");
+                            System.out.println("2. Nombre");
+                            System.out.println("3. Apellido");
+                            System.out.println("4. Correo");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                    Collections.reverse(CompaUsuario);
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("1"));
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                    Collections.reverse(CompaUsuario);
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("2"));
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                    Collections.reverse(CompaUsuario);
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("3"));
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                            }else if (compa.equals("4")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                    Collections.reverse(CompaUsuario);
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaUsuario,new UsuarioComparador("4"));
+                                    System.out.println(CompaUsuario);
+                                    CompaUsuario.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("6")) {
@@ -2402,7 +4011,7 @@ public class Sistema {
                 if (entrenadores.size() == 0) {
                     System.out.println("---La lista de entrenadores se encuentra vacía---");
                     return;
-                }
+                }ArrayList<Entrenadores> CompaEntrenadores = new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -2447,11 +4056,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.documento >= cedula) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---La cedula a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("3")) {
@@ -2460,11 +4141,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.documento <= cedula) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---La cedula a buscar no se encuentra---");
                                 }
                             } else if (option2.equals("4")) {
@@ -2490,11 +4243,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.nombre.equals(nombre)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró el nombre---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2505,11 +4330,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.nombre.toLowerCase().equals(nombreMInus)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró el nombre---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2534,11 +4431,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.apellido.equals(apellido)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró el apellido---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2549,11 +4518,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.apellido.toLowerCase().equals(apellidoMInus)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró el apellido---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2579,11 +4620,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.correo.equals(correo)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró el correo---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2594,11 +4707,83 @@ public class Sistema {
                                 int c = 0;
                                 for (Entrenadores entrenadore : entrenadores) {
                                     if (entrenadore.correo.toLowerCase().equals(correoMInus)) {
-                                        System.out.println(entrenadore);
                                         c++;
+                                        CompaEntrenadores.add(entrenadore);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            Collections.reverse(CompaEntrenadores);
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                            System.out.println(CompaEntrenadores);
+                                            CompaEntrenadores.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró ningun correo---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2606,8 +4791,82 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("5")) {
+                        int c=0;
                         for (Entrenadores entrenadore : entrenadores) {
-                            System.out.println(entrenadore);
+                            c++;
+                            CompaEntrenadores.add(entrenadore);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Documento");
+                            System.out.println("2. Nombre");
+                            System.out.println("3. Apellido");
+                            System.out.println("4. Correo");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                    Collections.reverse(CompaEntrenadores);
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("1"));
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                    Collections.reverse(CompaEntrenadores);
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("2"));
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                    Collections.reverse(CompaEntrenadores);
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("3"));
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                            }else if (compa.equals("4")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                    Collections.reverse(CompaEntrenadores);
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaEntrenadores,new EntrenadorComparador("4"));
+                                    System.out.println(CompaEntrenadores);
+                                    CompaEntrenadores.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("6")) {
@@ -2619,6 +4878,7 @@ public class Sistema {
                     System.out.println("---la lista de rutinas se encuentra vacía---");
                     return;
                 }
+                ArrayList<Rutinas> CompaRutina=new ArrayList<>();
                 String seleccion;
                 while (true) {
                     System.out.println();
@@ -2652,11 +4912,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina1 : rutinas) {
                                     if (rutina1.rutina1.equals(rutina)) {
-                                        System.out.println(rutina1);
                                         c++;
+                                        CompaRutina.add(rutina1);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2667,11 +5015,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina1 : rutinas) {
                                     if (rutina1.rutina2.toLowerCase().equals(rutinaMInus)) {
-                                        System.out.println(rutina1);
                                         c++;
+                                        CompaRutina.add(rutina1);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2696,11 +5132,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina2 : rutinas) {
                                     if (rutina2.rutina2.equals(rutina)) {
-                                        System.out.println(rutina2);
                                         c++;
+                                        CompaRutina.add(rutina2);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2711,11 +5235,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina2 : rutinas) {
                                     if (rutina2.rutina2.toLowerCase().equals(rutinaMInus)) {
-                                        System.out.println(rutina2);
                                         c++;
+                                        CompaRutina.add(rutina2);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2740,11 +5352,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina3 : rutinas) {
                                     if (rutina3.rutina3.equals(rutina)) {
-                                        System.out.println(rutina3);
                                         c++;
+                                        CompaRutina.add(rutina3);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2755,11 +5455,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina3 : rutinas) {
                                     if (rutina3.rutina3.toLowerCase().equals(rutina3MInus)) {
-                                        System.out.println(rutina3);
                                         c++;
+                                        CompaRutina.add(rutina3);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2784,11 +5572,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina4 : rutinas) {
                                     if (rutina4.rutina4.equals(rutina)) {
-                                        System.out.println(rutina4);
                                         c++;
+                                        CompaRutina.add(rutina4);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro la rutina---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2799,11 +5675,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina4 : rutinas) {
                                     if (rutina4.rutina4.toLowerCase().equals(rutina4MInus)) {
-                                        System.out.println(rutina4);
                                         c++;
+                                        CompaRutina.add(rutina4);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2828,11 +5792,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina5 : rutinas) {
                                     if (rutina5.rutina5.equals(rutina)) {
-                                        System.out.println(rutina5);
                                         c++;
+                                        CompaRutina.add(rutina5);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontro la rutina---");
                                 }
                             }else if (option1.equals("2")) {
@@ -2843,11 +5895,99 @@ public class Sistema {
                                 int c = 0;
                                 for (Rutinas rutina5 : rutinas) {
                                     if (rutina5.rutina5.toLowerCase().equals(rutina5MInus)) {
-                                        System.out.println(rutina5);
                                         c++;
+                                        CompaRutina.add(rutina5);
+                                    }
+                                }if (c!=0){
+                                    System.out.println("Por cual dese ordenar");
+                                    System.out.println("1. Documento");
+                                    System.out.println("2. Nombre");
+                                    System.out.println("3. Apellido");
+                                    System.out.println("4. Correo");
+                                    String compa = input.next();
+                                    if (compa.equals("1")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("2")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("3")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("4")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                    }else if (compa.equals("5")){
+                                        System.out.println("Desea ver la lista de manera: ");
+                                        System.out.println("1. Descendente");
+                                        System.out.println("2. Ascendente");
+                                        String op = input.next();
+                                        if (op.equals("1")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            Collections.reverse(CompaRutina);
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
+                                        else if (op.equals("2")){
+                                            Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                            System.out.println(CompaRutina);
+                                            CompaRutina.clear();
+                                        }
                                     }
                                 }
-                                if (c == 0) {
+                                else if (c == 0) {
                                     System.out.println("---No se encontró la rutina---");
                                 }
                             } else if (option1.equals("3")) {
@@ -2855,8 +5995,98 @@ public class Sistema {
                             }
                         }
                     }else if (seleccion.equals("6")) {
+                        int c=0;
                         for (Rutinas rutina : rutinas) {
-                            System.out.println(rutina);
+                            c++;
+                            CompaRutina.add(rutina);
+                        }if (c!=0){
+                            System.out.println("Por cual dese ordenar");
+                            System.out.println("1. Documento");
+                            System.out.println("2. Nombre");
+                            System.out.println("3. Apellido");
+                            System.out.println("4. Correo");
+                            String compa = input.next();
+                            if (compa.equals("1")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                    Collections.reverse(CompaRutina);
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("1"));
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                            }else if (compa.equals("2")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                    Collections.reverse(CompaRutina);
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("2"));
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                            }else if (compa.equals("3")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                    Collections.reverse(CompaRutina);
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("3"));
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                            }else if (compa.equals("4")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                    Collections.reverse(CompaRutina);
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("4"));
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                            }else if (compa.equals("5")){
+                                System.out.println("Desea ver la lista de manera: ");
+                                System.out.println("1. Descendente");
+                                System.out.println("2. Ascendente");
+                                String op = input.next();
+                                if (op.equals("1")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                    Collections.reverse(CompaRutina);
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                                else if (op.equals("2")){
+                                    Collections.sort(CompaRutina,new RutinaComparador("5"));
+                                    System.out.println(CompaRutina);
+                                    CompaRutina.clear();
+                                }
+                            }
                         }
                     }
                     else if (seleccion.equals("7")) {
