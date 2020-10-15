@@ -15,15 +15,8 @@ public class Rutinas {
         this.rutina5=rutina5;
 
     }
-
-    @Override
     public String toString() {
-        return "lista " + id + "\n" +
-                "\t rutina 1 : " + rutina1 + "\n" +
-                "\t rutina 2 : " + rutina2 + "\n" +
-                "\t rutina 3 : " + rutina3 + "\n" +
-                "\t rutina 4 : " + rutina4 + "\n" +
-                "\t rutina 5 : " + rutina5 + "\n" +
-                "\t ";
+        return "-  Rutinas:"+"ID:"+id+" 1. "+rutina1+" "+"2. "+rutina2+" "+"3. "+rutina3+
+                "4. "+rutina4+" "+"5. "+rutina5;
     }
 }

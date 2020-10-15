@@ -20,15 +20,10 @@ public class Entrenadores {
         misRutinas = new ArrayList<>();
     }
 
-    @Override
     public String toString() {
-        return "Entrenadores{" +
-                "misRutinas=" + misRutinas +
-                ", documento=" + documento +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", correo='" + correo + '\'' +
-                '}';
+        return "-  Entrenador:"+nombre+", "+"Apellido:"+apellido+", "+"Documento:"+documento+", "+"Correo"+
+                correo+"\n"+
+                "Rutinas:"+misRutinas;
     }
 
 }

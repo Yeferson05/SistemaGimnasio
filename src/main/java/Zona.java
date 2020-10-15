@@ -28,14 +28,6 @@ public class Zona {
 
     @Override
     public String toString() {
-        return "Zona{" +
-                "misEntrenadores=" + misEntrenadores +
-                ", misRutinas=" + misRutinas +
-                ", zona1='" + zona1 + '\'' +
-                ", zona2='" + zona2 + '\'' +
-                ", zona3='" + zona3 + '\'' +
-                ", zona4='" + zona4 + '\'' +
-                ", zona5='" + zona5 + '\'' +
-                '}';
+        return "-  Zona:"+"1. "+zona1+" 2. "+zona2+" 3. "+zona3+" 4. "+zona4+" 5. "+zona5;
     }
 }

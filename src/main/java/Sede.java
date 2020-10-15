@@ -30,16 +30,8 @@ public class Sede {
 
     @Override
     public String toString() {
-        return "Sede{" +
-                "gimnasio=" + gimnasio +
-                ", misCursos=" + misCursos +
-                ", misZonas=" + misZonas +
-                ", misEntrenadores=" + misEntrenadores +
-                ", misRutinas=" + misRutinas +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", ciudad='" + ciudad + '\'' +
-                '}';
+        return  "-  Sede:"+" "+"Nombre:"+nombre+", "+"Ciudad:"+ciudad+", "+"Dirección:"+direccion+"\n"+
+                "-  Zonas:"+misZonas;
     }
 }
 

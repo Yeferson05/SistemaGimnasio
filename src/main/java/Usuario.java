@@ -23,16 +23,11 @@ public class Usuario {
         misEntrenadores = new ArrayList<>();
     }
 
-    @Override
     public String toString() {
-        return "Usuario{" +
-                "misEntrenadores=" + misEntrenadores +
-                ", cedula=" + cedula +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", correo='" + correo + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return  "-  Usuario:"+nombre+", "+"Apellido:"+apellido+", "+"Cedula:"+cedula+", "+"Correo:"+correo+
+                ", "+"Contraseña:"+password+"\n"+
+                "-  Entrenadores:"+misEntrenadores;
+
     }
 
     public int getCedula(){
@@ -41,7 +36,6 @@ public class Usuario {
     public String getCorreo(){
         return correo;
     }
-
     public String getPassword() {
         return password;
     }

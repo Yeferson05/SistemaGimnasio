@@ -195,7 +195,8 @@ public class Sistema {
             System.out.println("4. Rutinas ");
             System.out.println("5. Entrenadores ");
             System.out.println("6. Usuarios ");
-            System.out.println("7. Cancelar ");
+            System.out.println("7. Cursos");
+            System.out.println("0. Cancelar ");
             System.out.println("------------------------------------------");
             System.out.println();
             option=input.next();
@@ -212,6 +213,8 @@ public class Sistema {
             }else if(option.equals("6")){
                 Usuarios();
             }else if(option.equals("7")){
+                Cursos();
+            }else if (option.equals("0")){
                 break;
             }
         }
@@ -495,7 +498,7 @@ public class Sistema {
                 String direccionSede=input.nextLine();
                 Sede nuevaSede = new Sede(nombreSede,ciudadSede,direccionSede);
                 sedes.add(nuevaSede);
-                System.out.println("la sede se registró correctamente");
+                System.out.println("---La sede se registró correctamente.---");
             }else if(option.equals("3")){
                 System.out.println("-------       Editar Sedes       -------");
                 System.out.println("1. Seleccionar por Dirección");
@@ -554,6 +557,7 @@ public class Sistema {
                 System.out.println("1. Seleccionar por Dirección");
                 String opcioneliminar = input.next();
                 if (opcioneliminar.equals("1")) {
+                    System.out.println("-   Ingrese la dirección de la sede a eliminar");
                     input.nextLine();
                     String dirEliminar = input.nextLine();
                     boolean comprobar = false;
@@ -611,7 +615,7 @@ public class Sistema {
                     System.out.println(zona);
                 }
             }else if(option.equals("2")){
-                System.out.println("-   ingrese el nombre de la zona 1:");
+                System.out.println("-   Ingrese el nombre de la zona 1:");
                 String zona1=input.next();
                 System.out.println("-   Ingrese el nombre de la zona 2:");
                 String zona2=input.next();
@@ -625,74 +629,10 @@ public class Sistema {
                 zonas.add(nuevaZona);
                 System.out.println("---Las zonas se registraron correctamente---");
             }else if(option.equals("3")){
-                System.out.println("-------       Editar Gimnasio       -------");
-                System.out.println("1. Seleccionar por NIT");
-                System.out.println("2. Seleccionar por Siglas");
-                String seleccion = input.next();
-                if (seleccion.equals("1")) {
-                    System.out.println("---Seleccionar por NIT---");
-                    System.out.println("-   Ingrese el NIT: ");
-                    String nitString = input.next();
-                    String nitReplace = nitString.replace(".", "");
-                    int intNIT = Integer.parseInt(nitReplace);
-                    boolean comprobante = false;
-                    for (Gimnasios gyms : gimnasios) {
-                        if (gyms.nit == intNIT) {
-                            comprobante = true;
-                            System.out.println("NIT: " + gyms.nit);
-                            input.nextLine();
-                            String nuevoNIT = input.nextLine();
-                            String lastNIT = nuevoNIT.replace(".", "");
-                            System.out.println("Nombre: " + gyms.nombre);
-                            String nuevoNombre = input.nextLine();
-                            System.out.println("Siglas: " + gyms.siglas);
-                            String nuevaSigla = input.nextLine();
-                            System.out.println("Dirección: " + gyms.direccion);
-                            String nuevaDir = input.nextLine();
-                            System.out.println("Telefono: " + gyms.telefono);
-                            String nuevoTel = input.nextLine();
-                            String nTel = nuevoTel.replace(" ", "");
-                            System.out.println("---¿Desea guardar los cambios?---");
-                            System.out.println("---Ingrese Y o N según el caso.---");
-                            System.out.println("Y -> Confirmar");
-                            System.out.println("N -> Cancelar");
-                            String opcionGuardar = input.next();
-                            if (opcionGuardar.equals("Y")) {
-                                if (!nuevoNIT.isEmpty()) {
-                                    int intLastNIT = Integer.parseInt(lastNIT);
-                                    gyms.nit = intLastNIT;
-                                }
-                                if (!nuevoNombre.isEmpty()) {
-                                    gyms.nombre = nuevoNombre;
-                                }
-                                if (!nuevaSigla.isEmpty()) {
-                                    gyms.siglas = nuevaSigla;
-                                }
-                                if (!nuevaDir.isEmpty()) {
-                                    gyms.direccion = nuevaDir;
-                                }
-                                if (!nuevoTel.isEmpty()) {
-                                    int intTel = Integer.parseInt(nTel);
-                                    gyms.telefono = intTel;
-                                }
-                                System.out.println("---Guardado exitoso.---");
-                                break;
-                            } else if (opcionGuardar.equals("N")) {
-                                System.out.println("---Guardado cancelado.---");
-                                break;
-                            } else {
-                                System.out.println("---Ingresa Y o N---");
-                            }
-                        }
-                    }
-                    if (comprobante == false) {
-                        System.out.println("---No se encontró ningún gimnasio con este NIT---");
-                    }
-                }
+
             }else if(option.equals("4")){
-                //
-            }else if(option.equals("5")){
-                break;
+                System.out.println("-------       Eliminar Sedes       -------");
+
             }
         }
     }
@@ -716,7 +656,7 @@ public class Sistema {
                     System.out.println("---La lista de rutinas se encuentra vacía.---");
                     return;
                 }
-                System.out.println("---Lista de zonas---");
+                System.out.println("---Lista de rutinas---");
                 for (Rutinas rutina : rutinas) {
                     System.out.println(rutina);
                 }
@@ -1063,7 +1003,7 @@ public class Sistema {
         while(true){
             System.out.println();
             System.out.println("--------       Menú Usuarios       -------");
-            System.out.println("escoja una opcion");
+            System.out.println("Escoja una opcion");
             System.out.println("1. Ver lista de usuarios");
             System.out.println("2. Crear usuario");
             System.out.println("3. Editar usuario");
@@ -1288,6 +1228,224 @@ public class Sistema {
                     }
                     if (!check){
                         System.out.println("---No se encontró ningún Usuario con este correo---");
+                    }
+                }
+            }else if(option.equals("5")){
+                break;
+            }
+        }
+    }
+    public static void Cursos() {
+        String option;
+        while(true){
+            System.out.println();
+            System.out.println("-------       Menú Cursos       -------");
+            System.out.println("Escoja una opcion");
+            System.out.println("1. Ver cursos");
+            System.out.println("2. Crear cursos");
+            System.out.println("3. Editar cursos");
+            System.out.println("4. Eliminar curso ");
+            System.out.println("5. Cancelar ");
+            System.out.println("------------------------------------------");
+            System.out.println();
+            option=input.next();
+            if(option.equals("1")){
+                if(cursos.size() == 0){
+                    System.out.println("---La lista de cursos se encuentra vacía.---");
+                    return;
+                }
+                System.out.println("---Lista de gimnasios---");
+                for (Cursos curso : cursos) {
+                    System.out.println(curso);
+                }
+            }else if(option.equals("2")){
+                System.out.println("-------       Crear nuevo Curso       -------");
+                System.out.println("-   Ingrese el codigo del curso: ");
+                int codigo = input.nextInt();
+                if (codigo < 0) {
+                    System.out.println("---Ingresaste un codigo invalido.---");
+                    return;
+                }
+                for (Cursos curso : cursos) {
+                    if (curso.codigo == codigo) {
+                        System.out.println("---Ya existe un curso con este codigo---");
+                        return;
+                    }
+                }
+                System.out.println("-   Ingrese el nombre del nuevo curso: ");
+                input.nextLine();
+                String nombreCurso=input.nextLine();
+
+                for (Cursos curso : cursos) {
+                    if (curso.nombre.equals(nombreCurso)) {
+                        System.out.println("---Este nombre de curso ya existe---");
+                        return;
+                    }
+                }
+                System.out.println("-   Ingrese la intensidad del curso: ");
+                int intensidad = input.nextInt();
+                if (intensidad < 0){
+                    System.out.println("---Ingrese un numero positivo.---");
+                    return;
+                }
+                Cursos nuevoCurso = new Cursos(nombreCurso,codigo,intensidad);
+                cursos.add(nuevoCurso);
+                System.out.println("---¡Registro del nuevo curso exitoso!---");
+            }else if(option.equals("3")){
+                System.out.println("-------       Editar Curso       -------");
+                System.out.println("1. Seleccionar por Codigo");
+                System.out.println("2. Seleccionar por Nombre");
+                String seleccion = input.next();
+                if (seleccion.equals("1")){
+                    System.out.println("---Seleccionar por Codigo---");
+                    System.out.println("-   Ingrese el Codigo: ");
+                    int code = input.nextInt();
+                    boolean comprobante = false;
+                    for (Cursos curso : cursos){
+                        if (curso.codigo == code){
+                            comprobante = true;
+                            System.out.println("Codigo: "+curso.codigo);
+                            input.nextLine();
+                            String nuevoCode = input.nextLine();
+                            System.out.println("Nombre: "+curso.nombre);
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Intensidad: "+curso.intesidadHora);
+                            String nuevaIntensidad = input.nextLine();
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevoCode.isEmpty()){
+                                    int intLastCode = Integer.parseInt(nuevoCode);
+                                    curso.codigo = intLastCode;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    curso.nombre = nuevoNombre;
+                                }
+                                if (!nuevoCode.isEmpty()){
+                                    int intInten = Integer.parseInt(nuevaIntensidad);
+                                    curso.intesidadHora = intInten;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                                break;
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (!comprobante){
+                        System.out.println("---No se encontró ningún curso con este codigo---");
+                    }
+                }else if (seleccion.equals("2")){
+                    System.out.println("---Seleccionar por nombre---");
+                    System.out.println("-   Ingrese el nombre: ");
+                    input.nextLine();
+                    String nombre = input.nextLine();
+                    boolean comprobante = false;
+                    for (Cursos curso : cursos){
+                        if (curso.nombre.equalsIgnoreCase(nombre)){
+                            comprobante = true;
+                            System.out.println("Nombre: "+curso.nombre);
+                            input.nextLine();
+                            String nuevoNombre = input.nextLine();
+                            System.out.println("Codigo: "+curso.codigo);
+                            String nuevoCode = input.nextLine();
+                            System.out.println("Intensidad: "+curso.intesidadHora);
+                            String nuevaIntensidad = input.nextLine();
+                            System.out.println("---¿Desea guardar los cambios?---");
+                            System.out.println("---Ingrese Y o N según el caso.---");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String opcionGuardar = input.next();
+                            if(opcionGuardar.equals("Y")){
+                                if (!nuevoCode.isEmpty()){
+                                    int intLastCode = Integer.parseInt(nuevoCode);
+                                    curso.codigo = intLastCode;
+                                }
+                                if (!nuevoNombre.isEmpty()){
+                                    curso.nombre = nuevoNombre;
+                                }
+                                if (!nuevoCode.isEmpty()){
+                                    int intInten = Integer.parseInt(nuevaIntensidad);
+                                    curso.intesidadHora = intInten;
+                                }
+                                System.out.println("---Guardado exitoso.---");
+                                break;
+                            }else if (opcionGuardar.equals("N")){
+                                System.out.println("---Guardado cancelado.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingresa Y o N---");
+                            }
+                        }
+                    }
+                    if (!comprobante){
+                        System.out.println("---No se encontró ningún curso con este codigo---");
+                    }
+                }
+
+            }else if(option.equals("4")){
+                System.out.println("-------       Eliminar Cursos       -------");
+                System.out.println("1. Seleccionar por Codigo");
+                System.out.println("2. Seleccionar por Nombre");
+                String opcioneliminar = input.next();
+                if (opcioneliminar.equals("1")){
+                    System.out.println("-   Ingrese el Codigo: ");
+                    String codeEliminar = input.next();
+                    int codeEntero = Integer.parseInt(codeEliminar);
+                    boolean comprobar = false;
+                    for (Cursos cursoEliminar : cursos){
+                        if (cursoEliminar.codigo == codeEntero){
+                            comprobar = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                cursos.remove(cursoEliminar);
+                                System.out.println("---El curso ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del gimnasio.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (comprobar == false){
+                        System.out.println("---No se encontró ningún curso con este codigo---");
+                    }
+                }else if(opcioneliminar.equals("2")){
+                    System.out.println("-   Ingrese el nombre: ");
+                    String nombreEliminar= input.next();
+                    boolean check = false;
+                    for (Cursos cursoEliminar :  cursos){
+                        if (cursoEliminar.nombre.equalsIgnoreCase(nombreEliminar)){
+                            check = true;
+                            System.out.println("¿Está seguro que desea eliminar el elemento?");
+                            System.out.println("Y -> Confirmar");
+                            System.out.println("N -> Cancelar");
+                            String yesornot = input.next();
+                            if (yesornot.equals("Y")){
+                                cursos.remove(nombreEliminar);
+                                System.out.println("---El curso ha sido eliminado.---");
+                                break;
+                            }else if (yesornot.equals("N")){
+                                System.out.println("---Se ha cancelado la eliminación del curso.---");
+                                break;
+                            }else{
+                                System.out.println("---Ingrese Y o N según el caso---");
+                            }
+                        }
+                    }
+                    if (check == false){
+                        System.out.println("---No se encontró ningún curso con este nombre---");
                     }
                 }
             }else if(option.equals("5")){

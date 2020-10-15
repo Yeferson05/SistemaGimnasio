@@ -26,13 +26,9 @@ public class Cursos {
 
     @Override
     public String toString() {
-        return "Cursos{" +
-                "misZonas=" + misZonas +
-                ", misEntrenadores=" + misEntrenadores +
-                ", misRutinas=" + misRutinas +
-                ", nombre='" + nombre + '\'' +
-                ", codigo=" + codigo +
-                ", intesidadHora=" + intesidadHora +
-                '}';
+        return  "-  Curso:"+nombre+", "+"Codigo:"+codigo+", "+"Intensidad:"+ intesidadHora+"\n"+
+                "-  Entrenadores:"+ misEntrenadores + "\n"+
+                "-  Rutinas:"+ misRutinas + "\n"+
+                "-  Zonas:"+ misZonas;
     }
 }

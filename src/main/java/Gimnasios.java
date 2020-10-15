@@ -31,20 +31,9 @@ public class Gimnasios {
         misRutinas = new ArrayList<>();
 
     }
-
-    @Override
     public String toString() {
-        return "Gimnasios{" +
-                "misSedes=" + misSedes +
-                ", misCursos=" + misCursos +
-                ", misZonas=" + misZonas +
-                ", misEntrenadores=" + misEntrenadores +
-                ", misRutinas=" + misRutinas +
-                ", nit=" + nit +
-                ", nombre='" + nombre + '\'' +
-                ", siglas='" + siglas + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                '}';
+        return  "-  Gimnasio:"+nombre+", "+"NIT:"+nit+", "+"Siglas:"+siglas+", "+"Dirección:"+direccion+
+                ", "+"Telefono:"+telefono+"\n"+
+                "-  Sedes:"+misSedes;
     }
 }
