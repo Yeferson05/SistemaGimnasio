@@ -6297,6 +6297,8 @@ public class Sistema {
         leerSedeJsonArrayList();
         JSONzonas();
         leerZonasJsonArrayList();
+        JSONcurso();
+        leerCursosJsonArrayList();
     }
 
     public static void JSONgimnasios() {
@@ -6631,8 +6633,54 @@ public class Sistema {
 
 
 
+    public static void JSONcurso() {
+        JSONArray CursoLista = new JSONArray();
+        for (Cursos curso : cursos) {
+            JSONObject cursoDatos = new JSONObject();
+            cursoDatos.put("nombre",curso.nombre);
+            cursoDatos.put("codigo",String.valueOf(curso.codigo));
+            cursoDatos.put("intesidad",String.valueOf(curso.intesidadHora));
+            JSONObject CursoPerfil = new JSONObject();
+            CursoPerfil.put("Curso",cursoDatos);
 
+            CursoLista.add(CursoPerfil);
+        }
+        try(FileWriter file = new FileWriter(ruta+"cursosJSON.json")){
+            file.write(CursoLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
 
+    public static void leerCursosJsonArrayList() {
+        cursos = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "CursosJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaCursos = (JSONArray) obj;
+            for (Object cursoObjeto : ListaCursos) {
+                JSONObject cursoJSON = (JSONObject) cursoObjeto;
+                cursos.add(parseCurso(cursoJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static Cursos parseCurso(JSONObject cursoJSON) {
+        JSONObject atributos = (JSONObject) cursoJSON.get("Curso");
+        String nombre = (String) atributos.get("nombre");
+        int codigo = Integer.parseInt((String) atributos.get("codigo"));
+        int intensidad = Integer.parseInt((String) atributos.get("intensidad"));
+        Cursos CursoLeido = new Cursos(nombre,codigo,intensidad);
+        return CursoLeido;
+    }
 
 
     public static void visualizar() {
