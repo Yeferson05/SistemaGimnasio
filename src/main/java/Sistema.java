@@ -6293,6 +6293,8 @@ public class Sistema {
         leerEntrenadoresJsonArrayList();
         leerRutinaJsonArrayList();
         JSONrutinas();
+        JSONsede();
+        leerSedeJsonArrayList();
     }
 
     public static void JSONgimnasios() {
@@ -6517,6 +6519,56 @@ public class Sistema {
 
 
 
+
+
+    public static void JSONsede() {
+        JSONArray SedeLista = new JSONArray();
+        for (Sede sede : sedes) {
+            JSONObject sedeDatos = new JSONObject();
+            sedeDatos.put("nombre",sede.nombre);
+            sedeDatos.put("direccion",sede.direccion);
+            sedeDatos.put("ciudad",sede.ciudad);
+            JSONObject SedePerfil = new JSONObject();
+            SedePerfil.put("Sede",sedeDatos);
+
+            SedeLista.add(SedePerfil);
+        }
+        try(FileWriter file = new FileWriter(ruta+"SedesJSON.json")){
+            file.write(SedeLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
+
+    public static void leerSedeJsonArrayList() {
+        sedes = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "SedesJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaSedes = (JSONArray) obj;
+            for (Object sedeObjeto : ListaSedes) {
+                JSONObject sedeJSON = (JSONObject) sedeObjeto;
+                sedes.add(parseSede(sedeJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static Sede parseSede(JSONObject sedeJSON) {
+        JSONObject atributos = (JSONObject) sedeJSON.get("Sede");
+        String nombre = (String) atributos.get("nombre");
+        String direccion = (String) atributos.get("direccion");
+        String ciudad = (String) atributos.get("ciudad");
+        Sede SedeLeido = new Sede(nombre,direccion,ciudad);
+        return SedeLeido;
+    }
 
 
 
