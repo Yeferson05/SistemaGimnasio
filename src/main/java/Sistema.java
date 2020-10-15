@@ -6305,7 +6305,6 @@ public class Sistema {
 
             GymLista.add(GimnasioPerfil);
         }
-
         try(FileWriter file = new FileWriter(ruta+"Gimnasios.JSON.json")){
             file.write(GymLista.toJSONString());
             file.flush();
@@ -6402,16 +6401,10 @@ public class Sistema {
         Usuario usuarioLeido = new Usuario(cedula, nombre, apellido, correo, contraseña);
         return usuarioLeido;
     }
-
     public static void visualizar() {
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
         }
     }
-
 }
-
-
-
-
 
