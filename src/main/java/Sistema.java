@@ -6295,6 +6295,8 @@ public class Sistema {
         JSONrutinas();
         JSONsede();
         leerSedeJsonArrayList();
+        JSONzonas();
+        leerZonasJsonArrayList();
     }
 
     public static void JSONgimnasios() {
@@ -6569,6 +6571,67 @@ public class Sistema {
         Sede SedeLeido = new Sede(nombre,direccion,ciudad);
         return SedeLeido;
     }
+
+
+    public static void JSONzonas() {
+        JSONArray ZonaLista = new JSONArray();
+        for (Zona zona : zonas) {
+            JSONObject zonaDatos = new JSONObject();
+            zonaDatos.put("zona 1",zona.zona1);
+            zonaDatos.put("zona 2",zona.zona2);
+            zonaDatos.put("zona 3",zona.zona3);
+            zonaDatos.put("zona 4",zona.zona4);
+            zonaDatos.put("zona 5",zona.zona5);
+            zonaDatos.put("id",String.valueOf(zona.id));
+            JSONObject ZonaPerfil = new JSONObject();
+            ZonaPerfil.put("Zona",zonaDatos);
+
+            ZonaLista.add(ZonaPerfil);
+        }
+        try(FileWriter file = new FileWriter(ruta+"ZonasJSON.json")){
+            file.write(ZonaLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
+
+    public static void leerZonasJsonArrayList() {
+        zonas = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "ZonasJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaZonas = (JSONArray) obj;
+            for (Object zonasObjeto : ListaZonas) {
+                JSONObject zonaJSON = (JSONObject) zonasObjeto;
+                zonas.add(parseZona(zonaJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static Zona parseZona(JSONObject zonaJSON) {
+        JSONObject atributos = (JSONObject) zonaJSON.get("Zona");
+        String zona1 = (String) atributos.get("zona 1");
+        String zona2 = (String) atributos.get("zona 2");
+        String zona3 = (String) atributos.get("zona 3");
+        String zona4 = (String) atributos.get("zona 4");
+        String zona5 = (String) atributos.get("zona 5");
+        int id = Integer.parseInt((String) atributos.get("id"));
+        Zona ZonaLeido = new Zona(zona1, zona2, zona3, zona4,zona5,id);
+        return ZonaLeido;
+    }
+
+
+
+
+
 
 
 
