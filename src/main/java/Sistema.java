@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Sistema {
     public static int idActual = 1;
+    public static int idZona = 1;
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<Usuario> usuarios= new ArrayList<>();
     public static ArrayList<Gimnasios> gimnasios= new ArrayList<>();
@@ -513,7 +514,6 @@ public class Sistema {
                         if (sedesdir.direccion.equalsIgnoreCase(dirBuscar)){
                             comprobante = true;
                             System.out.println("Dirección: "+sedesdir.direccion);
-                            input.nextLine();
                             String nuevaDir = input.nextLine();
                             System.out.println("Nombre: "+sedesdir.nombre);
                             String nuevoNombre = input.nextLine();
@@ -625,14 +625,97 @@ public class Sistema {
                 String zona4=input.next();
                 System.out.println("-   Ingrese el nombre de la zona 5:");
                 String zona5=input.next();
-                Zona nuevaZona = new Zona(zona1,zona2,zona3,zona4,zona5);
+                Zona nuevaZona = new Zona(zona1,zona2,zona3,zona4,zona5,idZona);
                 zonas.add(nuevaZona);
+                idZona++;
                 System.out.println("---Las zonas se registraron correctamente---");
             }else if(option.equals("3")){
-
+                System.out.println("-------       Editar Zona       -------");
+                System.out.println("-   Ingrese el ID de la lista de las zonas: ");
+                String idString = input.next();
+                String idReplace = idString.replace(".", "");
+                int intID = Integer.parseInt(idReplace);
+                boolean comprobante = false;
+                for (Zona zona : zonas) {
+                    if (zona.id == intID) {
+                        comprobante = true;
+                        System.out.println("ID: " + zona.id);
+                        input.nextLine();
+                        String nuevoID = input.nextLine();
+                        String lastID = nuevoID.replace(".", "");
+                        System.out.println("zona 1: " + zona.zona1);
+                        String nuevoNombre1 = input.nextLine();
+                        System.out.println("zona 2: " + zona.zona2);
+                        String nuevoNombre2 = input.nextLine();
+                        System.out.println("zona 3: " + zona.zona3);
+                        String nuevoNombre3 = input.nextLine();
+                        System.out.println("zona 4: " + zona.zona4);
+                        String nuevoNombre4 = input.nextLine();
+                        System.out.println("zona 5: " + zona.zona5);
+                        String nuevoNombre5 = input.nextLine();
+                        System.out.println("---¿Desea guardar los cambios?---");
+                        System.out.println("---Ingrese Y o N según el caso.---");
+                        System.out.println("Y -> Confirmar");
+                        System.out.println("N -> Cancelar");
+                        String opcionGuardar = input.next();
+                        if (opcionGuardar.equals("Y")) {
+                            if (!nuevoID.isEmpty()) {
+                                int intLastID = Integer.parseInt(lastID);
+                                zona.id = intLastID;
+                            }
+                            if (!nuevoNombre1.isEmpty()) {
+                                zona.zona1 = nuevoNombre1;
+                            }if (!nuevoNombre2.isEmpty()) {
+                                zona.zona2 = nuevoNombre2;
+                            }if (!nuevoNombre3.isEmpty()) {
+                                zona.zona3 = nuevoNombre3;
+                            }if (!nuevoNombre4.isEmpty()) {
+                                zona.zona4 = nuevoNombre4;
+                            }if (!nuevoNombre5.isEmpty()) {
+                                zona.zona5 = nuevoNombre5;
+                            }
+                            System.out.println("---Guardado exitoso.---");
+                            break;
+                        } else if (opcionGuardar.equals("N")) {
+                            System.out.println("---Guardado cancelado.---");
+                            break;
+                        } else {
+                            System.out.println("---Ingresa Y o N---");
+                        }
+                    }
+                }
+                if (!comprobante){
+                    System.out.println("---No se encontró ningúna lista de Zonas con ese ID---");
+                }
             }else if(option.equals("4")){
-                System.out.println("-------       Eliminar Sedes       -------");
-
+                System.out.println("-------       Eliminar Zona       -------");
+                System.out.println("-   Ingrese el ID de la lista de zonas: ");
+                String idEliminar = input.next();
+                String idEdit = idEliminar.replace(".","");
+                int idEntero = Integer.parseInt(idEdit);
+                boolean comprobar = false;
+                for (Zona listeliminar : zonas){
+                    if (listeliminar.id == idEntero){
+                        comprobar = true;
+                        System.out.println("¿Está seguro que desea eliminar el elemento?");
+                        System.out.println("Y -> Confirmar");
+                        System.out.println("N -> Cancelar");
+                        String yesornot = input.next();
+                        if (yesornot.equals("Y")){
+                            zonas.remove(listeliminar);
+                            System.out.println("---La lista de Rutinas ha sido eliminada.---");
+                            break;
+                        }else if (yesornot.equals("N")){
+                            System.out.println("---Se ha cancelado la eliminación de la lista de Rutinas.---");
+                            break;
+                        }else{
+                            System.out.println("---Ingrese Y o N según el caso---");
+                        }
+                    }
+                }
+                if (!comprobar){
+                    System.out.println("---No se encontró ningúna lista de zonas con este ID---");
+                }
             }
         }
     }
@@ -1079,10 +1162,9 @@ public class Sistema {
                             System.out.println("Apellido: "+usuario.apellido);
                             String nuevoApellido = input.nextLine();
                             System.out.println("Correo: "+usuario.correo);
-                            String nuevoCorr=input.next();
+                            String nuevoCorr=input.nextLine();
                             System.out.println("Contraseña: "+usuario.password);
-                            String nuevacontra=input.next();
-                            input.nextLine();
+                            String nuevacontra=input.nextLine();
                             System.out.println("---¿Desea guardar los cambios?---");
                             System.out.println("---Ingrese Y o N según el caso.---");
                             System.out.println("Y -> Confirmar");
@@ -1134,8 +1216,7 @@ public class Sistema {
                             System.out.println("Correo: " + usuario.correo);
                             String nuevoCorr = input.nextLine();
                             System.out.println("Contraseña: "+usuario.password);
-                            String nuevacontra=input.next();
-                            input.nextLine();
+                            String nuevacontra=input.nextLine();
                             System.out.println("---¿Desea guardar los cambios?---");
                             System.out.println("---Ingrese Y o N según el caso.---");
                             System.out.println("Y -> Confirmar");
@@ -1304,8 +1385,8 @@ public class Sistema {
                     for (Cursos curso : cursos){
                         if (curso.codigo == code){
                             comprobante = true;
-                            System.out.println("Codigo: "+curso.codigo);
                             input.nextLine();
+                            System.out.println("Codigo: "+curso.codigo);
                             String nuevoCode = input.nextLine();
                             System.out.println("Nombre: "+curso.nombre);
                             String nuevoNombre = input.nextLine();
@@ -1350,8 +1431,8 @@ public class Sistema {
                     for (Cursos curso : cursos){
                         if (curso.nombre.equalsIgnoreCase(nombre)){
                             comprobante = true;
-                            System.out.println("Nombre: "+curso.nombre);
                             input.nextLine();
+                            System.out.println("Nombre: "+curso.nombre);
                             String nuevoNombre = input.nextLine();
                             System.out.println("Codigo: "+curso.codigo);
                             String nuevoCode = input.nextLine();
@@ -6291,13 +6372,13 @@ public class Sistema {
         Usuario usuario3 = new Usuario(3,"","","","");
         usuarios.add(usuario3);
 
-        Zona zonas1 = new Zona("","","","","");
+        Zona zonas1 = new Zona("","","","","",idZona);
         zonas.add(zonas1);
-        Zona zonas2 = new Zona("","","","","");
+        Zona zonas2 = new Zona("","","","","",idZona);
         zonas.add(zonas2);
-        Zona zonas3 = new Zona("","","","","");
+        Zona zonas3 = new Zona("","","","","",idZona);
         zonas.add(zonas3);
-        Zona zonas4 = new Zona("","","","","");
+        Zona zonas4 = new Zona("","","","","",idZona);
         zonas.add(zonas4);
 
         Entrenadores entrenador1 = new Entrenadores(1,"","","");
