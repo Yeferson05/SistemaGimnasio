@@ -1,3 +1,8 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -5,6 +10,7 @@ import java.util.Scanner;
 public class Sistema {
     public static int idActual = 1;
     public static int idZona = 1;
+    public static String ruta= "src/main/resources/database";
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<Usuario> usuarios= new ArrayList<>();
     public static ArrayList<Gimnasios> gimnasios= new ArrayList<>();
@@ -6449,8 +6455,33 @@ public class Sistema {
 
     public static void guardar() {
 
+        genrarJSON();
     }
 
+
+
+    public static void genrarJSON() {
+        JSONArray UsuarioLista = new JSONArray();
+        for (Usuario usuario : usuarios) {
+            JSONObject usuarioDatos = new JSONObject();
+            usuarioDatos.put("cedula",usuario.cedula);
+            usuarioDatos.put("nombre",usuario.nombre);
+            usuarioDatos.put("apellido",usuario.apellido);
+            usuarioDatos.put("correo",usuario.correo);
+            usuarioDatos.put("contraseña",usuario.password);
+            JSONObject UsuarioPerfil = new JSONObject();
+            UsuarioPerfil.put("Usuario",usuarioDatos);
+
+            UsuarioLista.add(UsuarioPerfil);
+        }
+
+        try(FileWriter file = new FileWriter(ruta+"Usuarios.JSON.json")){
+            file.write(UsuarioLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
 
 
 
