@@ -33,7 +33,6 @@ public class Sistema {
             System.out.println("Escoja una opcion");
             System.out.println("1. Ingresar");
             System.out.println("2. Registrarse ");
-            System.out.println("3. Visualizar");
             System.out.println("0. salir");
             System.out.println("------------------------------------------------------");
             System.out.println();
@@ -42,8 +41,6 @@ public class Sistema {
                 ingresar();
             } else if (option.equals("2")) {
                 registrarse();
-            } else if (option.equals("3")) {
-                visualizar();
             } else if (option.equals("0")) {
                 break;
             }
@@ -6292,6 +6289,30 @@ public class Sistema {
         JSONgimnasios();
     }
 
+    public static void JSONgimnasios() {
+        JSONArray GymLista = new JSONArray();
+        for (Gimnasios gym : gimnasios) {
+            JSONObject gimnasioDatos = new JSONObject();
+            gimnasioDatos.put("NIT",gym.nit);
+            gimnasioDatos.put("nombre",gym.nombre);
+            gimnasioDatos.put("siglas",gym.siglas);
+            gimnasioDatos.put("direccion",gym.direccion);
+            gimnasioDatos.put("telefono",gym.telefono);
+            JSONObject GimnasioPerfil = new JSONObject();
+            GimnasioPerfil.put("Usuario",gimnasioDatos);
+
+            GymLista.add(GimnasioPerfil);
+        }
+
+        try(FileWriter file = new FileWriter(ruta+"Gimnasios.JSON.json")){
+            file.write(GymLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
+
+
     public static void genrarJSON() {
         JSONArray gimnasio = new JSONArray();
         JSONArray UsuarioLista = new JSONArray();
@@ -6351,42 +6372,12 @@ public class Sistema {
     public static void visualizar() {
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
-
-
-        }
-    }
-<<<<<<< HEAD
-}
-=======
-
-    public static void JSONgimnasios() {
-        JSONArray GymLista = new JSONArray();
-        for (Gimnasios gym : gimnasios) {
-            JSONObject gimnasioDatos = new JSONObject();
-            gimnasioDatos.put("NIT",gym.nit);
-            gimnasioDatos.put("nombre",gym.nombre);
-            gimnasioDatos.put("siglas",gym.siglas);
-            gimnasioDatos.put("direccion",gym.direccion);
-            gimnasioDatos.put("telefono",gym.telefono);
-            JSONObject GimnasioPerfil = new JSONObject();
-            GimnasioPerfil.put("Usuario",gimnasioDatos);
-
-            GymLista.add(GimnasioPerfil);
-        }
-
-        try(FileWriter file = new FileWriter(ruta+"Gimnasios.JSON.json")){
-            file.write(GymLista.toJSONString());
-            file.flush();
-        } catch (Exception e){
-            System.out.println("Error en :"+e);
-        }
-    }
-
-    public static void visualizar() {
-        for (Usuario usuario : usuarios) {
-            System.out.println(usuario);
         }
     }
 
 }
->>>>>>> main
+
+
+
+
+
