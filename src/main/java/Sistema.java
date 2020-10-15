@@ -21,10 +21,6 @@ public class Sistema {
     public static ArrayList<Entrenadores> entrenadores= new ArrayList<>();
     public static ArrayList<Cursos> cursos= new ArrayList<>();
     public static void main(String[] args) {
-        Gimnasios nuevoGym1=new Gimnasios(123,"bodytech","bdt","avenida siempre viva",321);
-        gimnasios.add(nuevoGym1);
-        Rutinas nuevoRut1=new Rutinas("pecho","brazo","cardio","espalda","resistencia",90);
-        rutinas.add(nuevoRut1);
         String option;
         while(true){
             System.out.println();
@@ -33,7 +29,6 @@ public class Sistema {
             System.out.println("Escoja una opcion");
             System.out.println("1. Ingresar");
             System.out.println("2. Registrarse ");
-            System.out.println("3. solo para visualizar los users(momentanea) ");
             System.out.println("0. salir");
             System.out.println("------------------------------------------------------");
             System.out.println();
@@ -2295,6 +2290,8 @@ public class Sistema {
                                 else if (op.equals("2")){
                                     Collections.sort(Compagimnasios,new GimnasioComparador("1"));
                                     System.out.println(Compagimnasios);
+
+
                                     Compagimnasios.clear();
                                 }
                             }else if (compa.equals("2")){
@@ -6458,8 +6455,6 @@ public class Sistema {
         genrarJSON();
     }
 
-
-
     public static void genrarJSON() {
         JSONArray UsuarioLista = new JSONArray();
         for (Usuario usuario : usuarios) {
@@ -6482,14 +6477,4 @@ public class Sistema {
             System.out.println("Error en :"+e);
         }
     }
-
-
-
-
-    public static void visualizar() {
-        for (Usuario usuario : usuarios) {
-            System.out.println(usuario);
-        }
-    }
-
 }
