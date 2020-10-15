@@ -6287,19 +6287,21 @@ public class Sistema {
     public static void guardar() {
         genrarJSON();
         JSONgimnasios();
+        leerUsuariosJsonArrayList();
+        leerGymsJsonArrayList();
     }
 
     public static void JSONgimnasios() {
         JSONArray GymLista = new JSONArray();
         for (Gimnasios gym : gimnasios) {
             JSONObject gimnasioDatos = new JSONObject();
-            gimnasioDatos.put("NIT",gym.nit);
+            gimnasioDatos.put("NIT",String.valueOf(gym.nit));
             gimnasioDatos.put("nombre",gym.nombre);
             gimnasioDatos.put("siglas",gym.siglas);
             gimnasioDatos.put("direccion",gym.direccion);
-            gimnasioDatos.put("telefono",gym.telefono);
+            gimnasioDatos.put("telefono",String.valueOf(gym.telefono));
             JSONObject GimnasioPerfil = new JSONObject();
-            GimnasioPerfil.put("Usuario",gimnasioDatos);
+            GimnasioPerfil.put("Gimnasio",gimnasioDatos);
 
             GymLista.add(GimnasioPerfil);
         }
@@ -6310,6 +6312,36 @@ public class Sistema {
         } catch (Exception e){
             System.out.println("Error en :"+e);
         }
+    }
+
+    public static void leerGymsJsonArrayList() {
+        gimnasios = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "GimnasiosJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaGyms = (JSONArray) obj;
+            for (Object gymObjeto : ListaGyms) {
+                JSONObject gimnasioJSON = (JSONObject) gymObjeto;
+                gimnasios.add(parseGym(gimnasioJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static Gimnasios parseGym(JSONObject gimnasioJSON) {
+        JSONObject atributos = (JSONObject) gimnasioJSON.get("Gimnasio");
+        int nit = Integer.parseInt((String) atributos.get("NIT"));
+        String nombre = (String) atributos.get("nombre");
+        String siglas = (String) atributos.get("siglas");
+        String direccion = (String) atributos.get("direccion");
+        int telefono = Integer.parseInt((String) atributos.get("telefono"));
+        Gimnasios gymLeido = new Gimnasios(nit, nombre, siglas, direccion, telefono);
+        return gymLeido;
     }
 
 
@@ -6357,6 +6389,8 @@ public class Sistema {
         }
 
     }
+
+
 
     private static Usuario parseUsuario(JSONObject usuarioJSON) {
         JSONObject atributos = (JSONObject) usuarioJSON.get("Usuario");
