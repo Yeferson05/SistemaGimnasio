@@ -6291,6 +6291,8 @@ public class Sistema {
         leerGymsJsonArrayList();
         JSONentrenadores();
         leerEntrenadoresJsonArrayList();
+        leerRutinaJsonArrayList();
+        JSONrutinas();
     }
 
     public static void JSONgimnasios() {
@@ -6307,7 +6309,7 @@ public class Sistema {
 
             GymLista.add(GimnasioPerfil);
         }
-        try(FileWriter file = new FileWriter(ruta+"Gimnasios.JSON.json")){
+        try(FileWriter file = new FileWriter(ruta+"GimnasiosJSON.json")){
             file.write(GymLista.toJSONString());
             file.flush();
         } catch (Exception e){
@@ -6416,7 +6418,7 @@ public class Sistema {
 
             EntrenadorLista.add(EntrenadorPerfil);
         }
-        try(FileWriter file = new FileWriter(ruta+"Entrenadores.JSON.json")){
+        try(FileWriter file = new FileWriter(ruta+"EntrenadoresJSON.json")){
             file.write(EntrenadorLista.toJSONString());
             file.flush();
         } catch (Exception e){
@@ -6458,13 +6460,60 @@ public class Sistema {
 
 
 
+    public static void JSONrutinas() {
+        JSONArray RutinaLista = new JSONArray();
+        for (Rutinas rutina : rutinas) {
+            JSONObject rutinaDatos = new JSONObject();
+            rutinaDatos.put("rutina 1",rutina.rutina1);
+            rutinaDatos.put("rutina 2",rutina.rutina2);
+            rutinaDatos.put("rutina 3",rutina.rutina3);
+            rutinaDatos.put("rutina 4",rutina.rutina4);
+            rutinaDatos.put("rutina 5",rutina.rutina5);
+            rutinaDatos.put("id",String.valueOf(rutina.id));
+            JSONObject RutinaPerfil = new JSONObject();
+            RutinaPerfil.put("Rutina",rutinaDatos);
 
+            RutinaLista.add(RutinaPerfil);
+        }
+        try(FileWriter file = new FileWriter(ruta+"RutinasJSON.json")){
+            file.write(RutinaLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
 
+    public static void leerRutinaJsonArrayList() {
+        rutinas = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "RutinasJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaRutinas = (JSONArray) obj;
+            for (Object rutinaObjeto : ListaRutinas) {
+                JSONObject rutinaJSON = (JSONObject) rutinaObjeto;
+                rutinas.add(parseRutina(rutinaJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
+    }
 
-
-
-
+    private static Rutinas parseRutina(JSONObject rutinaJSON) {
+        JSONObject atributos = (JSONObject) rutinaJSON.get("Rutina");
+        String rutina1 = (String) atributos.get("rutina 1");
+        String rutina2 = (String) atributos.get("rutina 2");
+        String rutina3 = (String) atributos.get("rutina 3");
+        String rutina4 = (String) atributos.get("rutina 4");
+        String rutina5 = (String) atributos.get("rutina 5");
+        int id = Integer.parseInt((String) atributos.get("id"));
+        Rutinas RutinaLeido = new Rutinas(rutina1, rutina2, rutina3, rutina4,rutina5,id);
+        return RutinaLeido;
+    }
 
 
 
