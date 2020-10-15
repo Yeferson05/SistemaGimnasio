@@ -6289,6 +6289,8 @@ public class Sistema {
         JSONgimnasios();
         leerUsuariosJsonArrayList();
         leerGymsJsonArrayList();
+        JSONentrenadores();
+        leerEntrenadoresJsonArrayList();
     }
 
     public static void JSONgimnasios() {
@@ -6389,8 +6391,6 @@ public class Sistema {
 
     }
 
-
-
     private static Usuario parseUsuario(JSONObject usuarioJSON) {
         JSONObject atributos = (JSONObject) usuarioJSON.get("Usuario");
         int cedula = Integer.parseInt((String) atributos.get("cedula"));
@@ -6401,6 +6401,76 @@ public class Sistema {
         Usuario usuarioLeido = new Usuario(cedula, nombre, apellido, correo, contraseña);
         return usuarioLeido;
     }
+
+
+    public static void JSONentrenadores() {
+        JSONArray EntrenadorLista = new JSONArray();
+        for (Entrenadores entrenador : entrenadores) {
+            JSONObject entrenadorDatos = new JSONObject();
+            entrenadorDatos.put("documento",String.valueOf(entrenador.documento));
+            entrenadorDatos.put("nombre",entrenador.nombre);
+            entrenadorDatos.put("apellido",entrenador.apellido);
+            entrenadorDatos.put("correo",entrenador.correo);
+            JSONObject EntrenadorPerfil = new JSONObject();
+            EntrenadorPerfil.put("Entrenador",entrenadorDatos);
+
+            EntrenadorLista.add(EntrenadorPerfil);
+        }
+        try(FileWriter file = new FileWriter(ruta+"Entrenadores.JSON.json")){
+            file.write(EntrenadorLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
+
+    public static void leerEntrenadoresJsonArrayList() {
+        entrenadores = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(ruta + "EntrenadoresJSON.json")) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray ListaEntrenadores = (JSONArray) obj;
+            for (Object entrenadorObjeto : ListaEntrenadores) {
+                JSONObject entrenadorJSON = (JSONObject) entrenadorObjeto;
+                entrenadores.add(parseEntrenador(entrenadorJSON));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static Entrenadores parseEntrenador(JSONObject entrenadorJSON) {
+        JSONObject atributos = (JSONObject) entrenadorJSON.get("Entrenador");
+        int documento = Integer.parseInt((String) atributos.get("documento"));
+        String nombre = (String) atributos.get("nombre");
+        String apellido = (String) atributos.get("apellido");
+        String correo = (String) atributos.get("correo");
+        Entrenadores EntrenadorLeido = new Entrenadores(documento, nombre, apellido, correo);
+        return EntrenadorLeido;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void visualizar() {
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
