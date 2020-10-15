@@ -24,8 +24,17 @@ public class Sistema {
     public static ArrayList<Entrenadores> entrenadores = new ArrayList<>();
     public static ArrayList<Cursos> cursos = new ArrayList<>();
 
+
     public static void main(String[] args) {
         String option;
+        Usuario nuevoUsuario = new Usuario(10298832, "Andres","Garcia","andres123@gmail.com","andres123");
+        usuarios.add(nuevoUsuario);
+        Gimnasios nuevoGym = new Gimnasios(8210923,"SmartFit","SMF","Calle Austral",4567382);
+        gimnasios.add(nuevoGym);
+        Sede nuevaSede = new Sede("Centro","Medellin","Calle 38");
+        sedes.add(nuevaSede);
+        Entrenadores nuevoEntrenador = new Entrenadores(104920392,"Carlos","Alzate","alzate91@yahoo.es");
+        entrenadores.add(nuevoEntrenador);
         while (true) {
             System.out.println();
             System.out.println("-------      Menú principal del sistema       -------");
@@ -101,6 +110,7 @@ public class Sistema {
             System.out.println("---Ingresaste valores invalidos.---");
         }
     }
+
 
     public static void registrarse() {
         System.out.println("-                   Registro                        -");
