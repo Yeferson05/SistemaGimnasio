@@ -6477,8 +6477,6 @@ public class Sistema {
             System.out.println("Error en :"+e);
         }
     }
-<<<<<<< Updated upstream
-=======
 
     public static void JSONgimnasios() {
         JSONArray GymLista = new JSONArray();
@@ -6503,14 +6501,10 @@ public class Sistema {
         }
     }
 
-
-
-
     public static void visualizar() {
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
         }
     }
 
->>>>>>> Stashed changes
 }
