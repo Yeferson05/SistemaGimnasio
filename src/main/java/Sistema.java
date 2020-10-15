@@ -6288,8 +6288,8 @@ public class Sistema {
     }
 
     public static void guardar() {
-
         genrarJSON();
+        JSONgimnasios();
     }
 
     public static void genrarJSON() {
@@ -6355,4 +6355,38 @@ public class Sistema {
 
         }
     }
+<<<<<<< HEAD
 }
+=======
+
+    public static void JSONgimnasios() {
+        JSONArray GymLista = new JSONArray();
+        for (Gimnasios gym : gimnasios) {
+            JSONObject gimnasioDatos = new JSONObject();
+            gimnasioDatos.put("NIT",gym.nit);
+            gimnasioDatos.put("nombre",gym.nombre);
+            gimnasioDatos.put("siglas",gym.siglas);
+            gimnasioDatos.put("direccion",gym.direccion);
+            gimnasioDatos.put("telefono",gym.telefono);
+            JSONObject GimnasioPerfil = new JSONObject();
+            GimnasioPerfil.put("Usuario",gimnasioDatos);
+
+            GymLista.add(GimnasioPerfil);
+        }
+
+        try(FileWriter file = new FileWriter(ruta+"Gimnasios.JSON.json")){
+            file.write(GymLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en :"+e);
+        }
+    }
+
+    public static void visualizar() {
+        for (Usuario usuario : usuarios) {
+            System.out.println(usuario);
+        }
+    }
+
+}
+>>>>>>> main
